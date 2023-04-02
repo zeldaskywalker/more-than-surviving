@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+<style>
+    #map { position: absolute; top: 100; bottom: 0; width: 95%; }
+</style>
+</head>
+
+<h1>A Very Preliminary MapBox Prototype...</h1>
+<br>
+<div id="map"></div>
+<script>
+// TO MAKE THE MAP APPEAR YOU MUST
+// ADD YOUR ACCESS TOKEN FROM
+// https://account.mapbox.com
+mapboxgl.accessToken = 'pk.eyJ1IjoiemVsZGFza3l3YWxrZXIiLCJhIjoiY2xmdThkOWJwMDhjZzNmbW9jc2NsZzZ1ZCJ9.Qpgl1f0WUUuheTTC5Wzn3A';
+    const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+    style: 'mapbox://styles/mapbox/streets-v12', // style URL
+    center: [-69.9896, 41.2624], // starting position [lng, lat]
+    zoom: 12 // starting zoom
+});
+/* 
+Add an event listener that runs
+  when a user clicks on the map element.
+*/
+map.on('load', () => {
+    map.addSource('my-data', {
+        "type": "geojson",
+        "data": {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-69.9896, 41.2624]
+            },
+            "properties": {
+                "title": "Nantucket Battle for Desegregated Schools",
+                "description": "A six year battle on Nantucket that resulted in equal access to education in Massachusetts.",
+                "location": "Nantucket",
+                "issue_type": "Racial Equality",
+                "year": 1846
+            }
+        }
+    });
+    map.addLayer({
+        'id': 'data-layer',
+        'type': 'circle',
+        'source': 'my-data',
+        'paint': {
+            'circle-radius': 4,
+            'circle-stroke-width': 2,
+            'circle-color': 'red',
+            'circle-stroke-color': 'white'
+            }
+    });
+});
+
+/* 
+Add an event listener that runs
+  when a user clicks on the map element.
+*/
+map.on('click', (event) => {
+    // If the user clicked on one of your markers, get its information.
+    const features = map.queryRenderedFeatures(event.point, {
+    layers: ['data-layer'] // replace with your layer name
+    });
+    if (!features.length) {
+    return;
+    }
+    const feature = features[0];
+
+  /* 
+    Create a popup, specify its options 
+    and properties, and add it to the map.
+  */
+    const popup = new mapboxgl.Popup({ offset: [0, -15] })
+                            .setLngLat(feature.geometry.coordinates)
+                            .setHTML(
+                                `<div style="border-radius:25px; background:#d7942a; padding:5px; width:40%; text-align:center"><b>${feature.properties.issue_type}</b></div>
+                                <h2>${feature.properties.title}</h2>
+                                <h4>${feature.properties.location} | ${feature.properties.year}</h4>
+                                ${feature.properties.description}`)
+    .addTo(map);
+    });
+</script>
+{% endblock content %}
