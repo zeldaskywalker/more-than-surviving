@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-CSRF_TRUSTED_ORIGINS = ['https://zeldaskywalker-solid-enigma-x6jqgx46jgrhprjq-8000.preview.app.github.dev']
+CSRF_TRUSTED_ORIGINS = ['https://zeldaskywalker-fictional-enigma-976xjv9rj79c99p6-8000.preview.app.github.dev']
 
 
 # Application definition
