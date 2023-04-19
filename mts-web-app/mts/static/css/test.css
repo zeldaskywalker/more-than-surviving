@@ -1,0 +1,16 @@
+body {
+    background-color: antiquewhite;
+}
+
+.nav-container {
+    display: grid;
+    background-color: goldenrod;
+    grid-template-columns: 1fr 1fr 1fr 1fr;;
+}
+
+.header-container {
+    display: grid;
+    background-color: aqua;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
