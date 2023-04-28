@@ -78,3 +78,37 @@ def translate_sql_data_to_timeline_json(query_result_list):
     final_timeline_json_string = json.dumps(final_timeline_dict)
     final_timeline_json = json.loads(final_timeline_json_string)
     return final_timeline_json
+
+import json
+
+def translate_sql_data_to_geo_json(query_result_list):
+  final_mapbox_dict = {"type": "FeatureCollection"}
+  final_features_list = []
+  for row in query_result_list:
+    feature_dict = {"type": "Feature"}
+
+    properties_dict = {
+        "id": row[0],
+        "title": row[1],
+        "description": row[5],
+        "issue_types": row[6],
+        "thumbnail": row[7],
+        "activists": row[8],
+        "location": row[4]
+    }
+
+    feature_dict["properties"] = properties_dict
+
+    geometry_dict = {
+        "type": "Point",
+        "coordinates": [row[3], row[2]]
+    }
+
+    feature_dict["geometry"] = geometry_dict
+
+    final_features_list.append(feature_dict)
+
+  final_mapbox_dict["features"] = final_features_list
+  final_mapbox_geojson_string = json.dumps(final_mapbox_dict)
+  final_mapbox_geojson = json.loads(final_mapbox_geojson_string)
+  return final_mapbox_geojson
