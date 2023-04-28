@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <div>
+        <h2>ACTIVISTA</h2>
+    </div>
+    <div>
+        <h1>{{activist_name}}</h1>
+    </div class="caption">
+    <div>
+        {{birth_year}} – {{death_year}} | {{tribe}}
+    </div>
+    <hr id="about-hr">
+    <div>
+        IMAGE
+    </div>
+    <div>
+        {{long_bio}}
+    </div>
+    <div>
+        map here
+    </div>
+    <div>
+        buttons here
+    </div>
+    <br>
+    <br>
+    <hr id="about-hr">
+    <div>
+        works cited here
+    </div>
+    <br>
+    <br>
+    <hr id="about-hr">
+    <div>
+        <h2>RELATED EVENTS</h2>
+        related events here
+    </div>
+</div>
+{% endblock content %}

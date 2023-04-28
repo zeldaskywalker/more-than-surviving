@@ -2,6 +2,7 @@
     --main-bg-color: #FFFFF6;
     --document-purple: #60589C;
     --document-gray: #5C5B5B;
+    --text: #1A1A1A;
     --womens-rights-purple: #867EC9;
     --temperance-blue: #819CB9;
     --racial-equality-green: #589C82;
@@ -11,6 +12,10 @@
 
 hr {
     border-top: 1px solid var(--document-gray);
+}
+
+#about-hr {
+    border-top: 2px solid var(--anti-slavery-gold);
 }
 
 html, body {
@@ -119,6 +124,18 @@ h2 {
     text-align: left;
     }
 
+#about-caption {
+    color: var(--document-purple);
+    font-size: 21px;
+    letter-spacing: 0.23px;
+    text-align: left;
+}
+
+#about-divider {
+    color: var(--anti-slavery-gold);
+    font-size: 21px;
+}
+
 button {
     border-radius: 5px;
     border: 1px solid #979797;
@@ -150,6 +167,14 @@ button {
     height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 50px;
+}
+
+#about-page-container {
+    padding: 50px;
+}
+
+#timeline-page-container {
     padding: 50px;
 }
 

@@ -15,5 +15,8 @@ class TimelineView(generic.TemplateView):
 class GalleryView(generic.TemplateView):
     template_name = 'gallery.html'
 
+class GlossaryView(generic.TemplateView):
+    template_name = 'glossary.html'
+
 class AboutView(generic.TemplateView):
     template_name = 'about.html'
