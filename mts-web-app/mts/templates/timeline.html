@@ -2,25 +2,22 @@
 
 {% block content %}
 {% load static %}
-<head>
-  <link rel="stylesheet" href="{% static 'css/timeline-custom.css' %}">
-  <link rel="stylesheet" href="{% static 'css/timeline-fonts.css' %}">
+<div id="timeline-page-container">
+  <div>
+    <h2>TIMELINE</h1>
+  </div>
+  <div style="width: 400px;">
+    <h1>WAMPANOAG POLITICAL ACTIVITY</h1>
+  </div>
+  <div id="caption">
+    1830 - 1850
+  </div>
+  <hr>
+  ISSUE KEY
+  <hr>
+  <div id='timeline-embed' style="width: 100%; height: 600px"></div>
+</div>
 
-</head>
-<body><h1>A timeline will eventually live here (we're working on it!)</h1>
-
- 
-  <!-- 1 -->
-  <link title="timeline-styles" rel="stylesheet" href="{% static 'css/timeline-custom.css' %}">
-  <link title="font.default" rel="stylesheet" href="{% static 'css/timeline-fonts.css' %}">
-
-
-<!-- 2 -->
-<script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
-
-<div id='timeline-embed' style="width: 100%; height: 600px"></div>
-
-<!-- 3 -->
 <script type="text/javascript">
   var additionalOptions = {
     font: '{% static 'css/timeline-fonts.css' %}',
@@ -39,7 +36,4 @@ timeline = new TL.Timeline('timeline-embed',
 'https://raw.githubusercontent.com/eszypulski/json-for-timeline/main/timeline.json',
 additionalOptions);
 </script>
-</body>
 {% endblock content %}
-
-

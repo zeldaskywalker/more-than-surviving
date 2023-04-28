@@ -9,10 +9,21 @@
     #map { position: absolute; top: 100; bottom: 0; width: 95%; }
 </style>
 </head>
-
-<h1>A Preliminary MapBox Prototype...</h1>
-<br>
-<div id="map"></div>
+<div id="timeline-page-container">
+    <div>
+      <h2>MAP</h1>
+    </div>
+    <div style="width: 400px;">
+      <h1>WAMPANOAG POLITICAL ACTIVITY</h1>
+    </div>
+    <div id="caption">
+      1830 - 1850
+    </div>
+    <hr>
+    ISSUE KEY
+    <hr>
+    <div id="map" style="height: auto;"></div>
+</div>
 <script>
 // TO MAKE THE MAP APPEAR YOU MUST
 // ADD YOUR ACCESS TOKEN FROM
@@ -21,7 +32,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiemVsZGFza3l3YWxrZXIiLCJhIjoiY2xmdThkOWJwMDhjZ
     const map = new mapboxgl.Map({
     container: 'map', // container ID
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-    style: 'mapbox://styles/mapbox/streets-v12', // style URL
+    style: 'mapbox://styles/mapbox/outdoors-v12', // style URL
     center: [-69.9896, 41.2624], // starting position [lng, lat]
     zoom: 12 // starting zoom
 });
