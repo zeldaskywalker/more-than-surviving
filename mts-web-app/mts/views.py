@@ -3,6 +3,8 @@ from django.shortcuts import render
 
 from django.views import generic
 
+from .models import Activists, Events, Images
+
 class HomeView(generic.TemplateView):
     template_name = 'home.html'
 
@@ -20,3 +22,11 @@ class GlossaryView(generic.TemplateView):
 
 class AboutView(generic.TemplateView):
     template_name = 'about.html'
+
+class EventView(generic.DetailView):
+    model = Events
+    template_name = 'event.html'
+
+class ActivistView(generic.DetailView):
+    model = Activists
+    template_name = 'activist.html'
