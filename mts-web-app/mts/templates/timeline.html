@@ -19,12 +19,13 @@
 </div>
 
 <script type="text/javascript">
+  var json = {{ timeline_json | safe }};
   var additionalOptions = {
     font: '{% static 'css/timeline-fonts.css' %}',
     default_bg_color: '#fffff6',
     marker_width_min: '130',
     timenav_height_percentage: '50'
-  }
+  };
 // The TL.Timeline constructor takes at least two arguments:
 // the id of the Timeline container (no '#'), and
 // the URL to your JSON data file or Google spreadsheet.
@@ -32,8 +33,6 @@
 // and the element must have CSS styling to give it width and height
 // optionally, a third argument with configuration options can be passed.
 // See below for more about options.
-timeline = new TL.Timeline('timeline-embed',
-'https://raw.githubusercontent.com/eszypulski/json-for-timeline/main/timeline.json',
-additionalOptions);
+timeline = new TL.Timeline('timeline-embed', json, additionalOptions);
 </script>
 {% endblock content %}
