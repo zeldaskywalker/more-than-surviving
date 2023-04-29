@@ -14,7 +14,7 @@ class Activists(models.Model):
     name = models.CharField(max_length=100)
     event_ids = models.JSONField()
     image_ids = models.JSONField()
-    tribal_affiliation = models.JSONField(blank=True)
+    tribal_affiliations = models.JSONField(blank=True)
     date_of_birth = models.DateField()
     date_of_birth_accuracy = models.CharField(
         max_length=5,
