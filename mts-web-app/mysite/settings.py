@@ -118,6 +118,8 @@ USE_I18N = True
 
 USE_TZ = True
 
+STATIC_ROOT ='mts-web-app/mts/static'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
