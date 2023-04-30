@@ -200,7 +200,19 @@ button {
     padding: 50px;
 }
 
+.page-container {
+    padding: 50px;
+}
+
 #about-page-container {
+    padding: 50px;
+}
+
+#activist-page-container {
+    padding: 50px;
+}
+
+#event-page-container {
     padding: 50px;
 }
 
@@ -278,6 +290,17 @@ button {
     padding-bottom: 30px;
     padding-left: 30px;
     padding-right: 200px;
+}
+
+.works-cited {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.citations {
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0.11px;
 }
 
 .nav {

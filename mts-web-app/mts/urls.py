@@ -9,4 +9,6 @@ urlpatterns = [
     path('gallery/', views.GalleryView.as_view(), name='gallery'),
     path('glossary/', views.GlossaryView.as_view(), name='glossary'),
     path('about/', views.AboutView.as_view(), name='about'),
+    path('event/<str:pk>/', views.EventView.as_view(), name='event'),
+    path('activist/<str:pk>/', views.ActivistView.as_view(), name='activist'),
 ]

@@ -1,26 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div>
+<div id="event-page-container">
     <div>
         <h2>EVENT</h2>
     </div>
     <div>
-        <h1>{{event_name}}</h1>
+        <h1>{{ events.title }}</h1>
     </div class="caption">
     <div>
-        {{date}} | {{location_name}}
+        {{ events.start_date }} - {{ events.end_date }} | {{events.location_names}}
     </div>
     <hr id="about-hr">
     <div>
-        IMAGE
+        {{ events.image_ids }}
     </div>
     <div>
-        {{long_bio}}
+        {{ events.long_description }}
     </div>
+    <br>
+    <br>
     <div>
         map here
     </div>
+    <br>
+    <br>
     <div>
         buttons here
     </div>
@@ -28,7 +32,9 @@
     <br>
     <hr id="about-hr">
     <div>
-        works cited here
+        <div class="works-cited">Work Cited</div>
+        <br>
+        <div class="citations">{{ events.citations }}</div>
     </div>
     <br>
     <br>

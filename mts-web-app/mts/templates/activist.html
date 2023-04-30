@@ -1,26 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div>
+<div id="activist-page-container">
     <div>
-        <h2>ACTIVISTA</h2>
+        <h2>ACTIVIST</h2>
     </div>
     <div>
-        <h1>{{activist_name}}</h1>
+        <h1>{{ activists.name }}</h1>
     </div class="caption">
     <div>
-        {{birth_year}} – {{death_year}} | {{tribe}}
+        {{ activists.date_of_birth }} – {{ activists.date_of_death }} | {{ activists.tribal_affiliations }}
     </div>
     <hr id="about-hr">
     <div>
-        IMAGE
+        {{ activists.image_ids }}
     </div>
     <div>
-        {{long_bio}}
+        {{ activists.long_bio }}
     </div>
+    <br>
+    <br>
     <div>
         map here
     </div>
+    <br>
+    <br>
     <div>
         buttons here
     </div>
@@ -28,7 +32,9 @@
     <br>
     <hr id="about-hr">
     <div>
-        works cited here
+        <div class="works-cited">Work Cited</div>
+        <br>
+        <div class="citations">{{ activists.citations }}</div>
     </div>
     <br>
     <br>
