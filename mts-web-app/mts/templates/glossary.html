@@ -1,5 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>ISSUES</h2>
+
+
+<div id="issues-page-container">
+  <h2>ISSUES</h2>
+  <div class="accordion">
+    <input type="checkbox" id="accordion1" />
+    <label for="accordion1">Header 1</label>
+    <div class="content">
+      <p>Content 1</p>
+    </div>
+
+    <input type="checkbox" id="accordion2" />
+    <label for="accordion2">Header 2</label>
+    <div class="content">
+      <p>Content 2</p>
+    </div>
+
+    <input type="checkbox" id="accordion3" />
+    <label for="accordion3">Header 3</label>
+    <div class="content">
+      <p>Content 3</p>
+    </div>
+  </div>
+</div>
 {% endblock content %}
+
+
