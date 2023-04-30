@@ -1,4 +1,4 @@
 mts-env
 venv
 .venv
-mts-web-app/mts/__pycache__/
+*/*pycache*/
