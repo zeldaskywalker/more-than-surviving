@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from django.core.management.utils import get_random_secret_key
+
+import os
 
 import os
 
@@ -22,12 +25,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('APP_SECRET_KEY')
+
+SECRET_KEY = os.getenv("APP_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = []
+DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 CSRF_TRUSTED_ORIGINS = ['https://zeldaskywalker-fictional-enigma-976xjv9rj79c99p6-8000.preview.app.github.dev']
 
@@ -81,11 +87,11 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("DB_NAME", "ejmikljk"),
-        "USER": os.environ.get("DB_USER", "ejmikljk"),
-        "PASSWORD": os.environ.get("DB_PASSWORD", "4do3hjsLVSeFVuSJ0Mxnj7XsH4k9j9Vf"),
-        "HOST": os.environ.get("DB_HOST", "baasu.db.elephantsql.com"),
-        'PORT': os.environ.get('DB_PORT', "5432"),
+        "NAME": os.getenv("DB_NAME", "ejmikljk"),
+        "USER": os.getenv("DB_USER", "ejmikljk"),
+        "PASSWORD": os.getenv("DB_PASSWORD", "4do3hjsLVSeFVuSJ0Mxnj7XsH4k9j9Vf"),
+        "HOST": os.getenv("DB_HOST", "baasu.db.elephantsql.com"),
+        'PORT': os.getenv('DB_PORT', "5432"),
     }
 }
 
