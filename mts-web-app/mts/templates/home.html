@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% load static %}
 <div id="landing-main-div">
     <div id="landing-h1-div">
         <h1 id="landing-h1">
@@ -15,7 +16,8 @@
 </div>
 <div id="landing-about-container">
     <div class="landing-child-div">
-        IMAGE HERE
+        <img src="{% static '/images/cynthia-attaquin.jpg' %}" width=300px>
+        <P class="home-image-caption">Cynthia Attaquin, Herring Pond & Mashpee Activist</P>
     </div>
     <div class="landing-child-div">
         <div class="q" id="landing-about-header">
@@ -25,7 +27,12 @@
         </div>
         <br>
         <div id="landing-about-text">
-            By the time the antebellum period arrived, Wampanoag people had suffered tremendous cultural, political and social attacks at the hands of European colonists and later, Americans, who disregarded their humanity. Access to their homelands was restricted to a small fraction of the former area and systemic and social discrimination hampered their ability to live freely. Despite this, the Wampanoag continued to express, politically and otherwise, one of the most important aspects of their culture— actively living with respect for and attention to the interconnectivity of all peoples. 
+            By the time the antebellum period arrived, Wampanoag people had suffered tremendous cultural, political and
+            social attacks at the hands of European colonists and later, Americans, who disregarded their humanity.
+            Access to their homelands was restricted to a small fraction of the former area and systemic and social
+            discrimination hampered their ability to live freely. Despite this, the Wampanoag continued to express,
+            politically and otherwise, one of the most important aspects of their culture— actively living with respect
+            for and attention to the interconnectivity of all peoples.
         </div>
         <br>
         <div>
@@ -42,14 +49,19 @@
         </div>
         <br>
         <div>
-            The antebellum era, directly impacted by the renewed religious fervor of the Second Great Awakening, saw the emergence of several social and political reform movements. People across the country organized to end slavery, racial discrimination and alcohol consumption, and to fight for Indigenous, workers, and women’s rights. The Wampanoag engaged in many of the activities, and their efforts had implications that extended well beyond the confines of their communities.          </div>
+            The antebellum era, directly impacted by the renewed religious fervor of the Second Great Awakening, saw the
+            emergence of several social and political reform movements. People across the country organized to end
+            slavery, racial discrimination and alcohol consumption, and to fight for Indigenous, workers, and women’s
+            rights. The Wampanoag engaged in many of the activities, and their efforts had implications that extended
+            well beyond the confines of their communities. </div>
         <br>
         <div>
             BUTTON HERE (ABOUT THE ISSUES)
         </div>
     </div>
     <div class="landing-child-div">
-        IMAGE HERE
+        <img src="{% static '/images/absalom-boston.jpg' %}" >
+        <P class="home-image-caption"><span class="light-text">Absalom Boston, Nantucket Activist</span></P>
     </div>
 </div>
 <div id="landing-explore-container">
@@ -72,4 +84,3 @@
     </div>
 </div>
 {% endblock content %}
-

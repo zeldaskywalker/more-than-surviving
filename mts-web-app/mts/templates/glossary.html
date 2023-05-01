@@ -1,30 +1,219 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
+{% load static %}
 
 
-<div id="issues-page-container">
-  <h2>ISSUES</h2>
+
+  <div class="issues-header"><div id="issues-header-container">
+  <h2>ISSUES</h2></div></div>
+
+  <div id="issues-page-container">
+  <p>Below is a brief introduction to key issues documented in this project that Wampanoag people engaged in. The
+    Antebellum period saw sustained and fervent political, social, and moral activism across the nation, and Wampanoag
+    people often joined non-Indigenous communities in activities on state and national level in support of systemic
+    changes that would have an impact far beyond the borders of their communities. </p>
+  <p> Click each issue to learn more.</p>
+
+  <!-- To add another accordion tab, copy a code block below, starting with <hr class="glossary-hr">, and ending with </div></div>. Then replace the text AND the issue ID in both id= and label for = -->
+
+
+  <!--Accordion tab: Indigenous Rights-->
+  <hr class="glossary-hr">
   <div class="accordion">
-    <input type="checkbox" id="accordion1" />
-    <label for="accordion1">Header 1</label>
+    <input type="checkbox" id="issue1" />
+    <label for="issue1"><span class="indigenous-rights">Indigenous Rights</span></label>
     <div class="content">
-      <p>Content 1</p>
-    </div>
+      <p>Indigenous Rights encompasses a variety of issues related to protecting cultural traditions, such as language,
+        ceremonial practices and access to homelands. In the 19th century, and today, the fight for land rights was a
+        critical part of the fight for Indigenous Rights. Centuries of predatory colonial and American practices had
+        diminished the access of Wampanoag to their homelands to a fraction of the pre-contact territory. The remaining
+        lands kept communally were at risk of exploitation by state appointed overseers and greedy neighbors—with
+        resources like lumber and local crops regularly plundered. Wampanoag responded with petitions, physical protest,
+        and demands for independence. Intermarriage brought individualistic philosophies into Wampanoag communities that
+        also threatened traditional communal land practices, causing some tribes to enact policies protecting against
+        attacks on their way of life. </p>
 
-    <input type="checkbox" id="accordion2" />
-    <label for="accordion2">Header 2</label>
-    <div class="content">
-      <p>Content 2</p>
     </div>
+  </div>
 
-    <input type="checkbox" id="accordion3" />
-    <label for="accordion3">Header 3</label>
+  <!--Accordion tab: Racial Equality-->
+  <div class="accordion">
+    <hr class="glossary-hr">
+    <input type="checkbox" id="issue2" />
+    <label for="issue2"><span class="racial-equality">Racial Equality</span></label>
     <div class="content">
-      <p>Content 3</p>
+      <p>Despite Northern states having abolished slavery by the 19th century, rampant racial equality persisted,
+        Massachusetts included. From everyday interactions to systemic discrimination, people of color faced all manner
+        of resistance to their very existence and success. Interracial marriage was illegal, access to education was
+        precarious and at times banned, and segregated railcars were the norm. Although most people of color were
+        granted citizenship with the 1866 passing of the 14th Amendment, all indigenous peoples did not receive the same
+        status until 1924 (the indigenous vote was not federally protected in 1957). This made it possible for people of
+        color to be accused in court and yet not have the right to testify on their own behalf. Within Wampanoag
+        communities on communal land, interracial marriage and access to education was common, yet exploitative
+        treatment by overseers and paternalistic state policies kept racial inequality top of mind. Wampanoags who did
+        not live on or traveled outside of communal lands dealt first hand with pervasive discrimination, including
+        facing the risk of being kidnapped and sold into slavery in the south. Wampanoag residing both on and off
+        communally held lands engaged in activities throughout the 19th century to fight discrimination against all
+        people of color, including petitioning the state and fighting (and winning) access to education. </p>
+    </div>
+  </div>
+
+
+  <!--Accordion tab: Anti-Slavery-->
+  <div class="accordion">
+    <hr class="glossary-hr">
+    <input type="checkbox" id="issue3" />
+    <label for="issue3"><span class="antislavery">Anti-Slavery</span></label>
+    <div class="content">
+      <p>The antebellum period saw a distinct rise in anti-slavery activities, with people of all colors
+        participating—including the Wampanoag, who had seen members of their own communities enslaved and shipped off to
+        far off lands. Anti-slavery activism took a variety of forms including petitioning, public speaking, newspaper
+        and pamphlet publishing and directly aiding escaped enslaved people. Wampanoag intermarriage with free Black
+        people and refugees from slavery was common, with communal native lands becoming a safe haven. Some Wampanoags
+        bought the freedom of their spouses, with the children of these unions considered Indigenous and therefore free.
+        Wampanoags both on and off communal lands joined in American Anti-Slavery Society (AASS) efforts, participating
+        in auxiliary groups, joining petition campaigns fighting for both anti-slavery and racial equality efforts, and
+        subscribing to The Liberator, the official newspaper of the organization. The interconnectivity of Wampanoag
+        activism with the AASS becomes even more apparent in the pages of the Liberator, published by William Lloyd
+        Garrison the organization's leader, which featured accounts of Wampanoag underground railroad activity and the
+        Mashpee fight for sovereignty. </p>
+    </div>
+  </div>
+
+  <!--Accordion tab: Temperance-->
+
+  <div class="accordion">
+    <hr class="glossary-hr">
+    <input type="checkbox" id="issue4" />
+    <label for="issue4"><span class="temperance">Temperance</span></label>
+    <div class="content">
+      <p>
+        Alcohol became was a hot button issue in the antebellum period. Vocal anti-alcohol activists across the country
+        spoke out against the substance and its negative impact on families and society as a whole. Temperance societies
+        formed with members pledging to abstain. Politically minded individuals pushed for laws banning the sale of
+        alcohol with varying success. Wampanoags knew first hand the negative impact of alcohol on their
+        communities—with outsiders taking advantage of alcohol addictions to hold tribal members in debt they then
+        leveraged to exact lands or sell the tribal member into slavery as repayment. Wampanoags looking to protect
+        their own communities started their own temperance societies and even petitioned the state to enact a law
+        banning the sale of alcohol to their tribal members. Although that law was never passed, in 1838, Massachusetts
+        banned the sale of alcohol less than 15 gallon quantities, which effectively limited alcohol sales to the
+        rich—the law was repealed two years later.
+      </p>
+    </div>
+  </div>
+
+  <!--Accordion tab: Women's Rights-->
+  <div class="accordion">
+    <hr class="glossary-hr">
+    <input type="checkbox" id="issue5" />
+    <label for="issue5"><span class="womens-rights">Women's Rights</span></label>
+    <div class="content">
+      <p>Starting in the 19th century, many women in the United States began to push against their traditionally
+        confined roles within the home. As more women played key roles in moral and political reform—becoming effective
+        petitioners and public speakers on issues like slavery, racial equality, and temperance—and took jobs outside
+        the home, they began to organize around the improvement of their legal and social standing. The Wampanoag are
+        matrilineal people, with spouses and children joining the mother's clan. Wampanoag women have always held
+        leadership roles and exercised considerable influence on tribal matters as sachems, clan mothers, and
+        influential matriarchs. In Mashpee and Aquinnah, women saw their rights codified in the 19th century—ensuring
+        their right to vote and speak up on tribal business and that plots of communal land managed by their families
+        were in their name, rather than their spouses. Outside of these communities, however, state and federal
+        institutions were not as egalitarian, and once communal lands were taken by the state, women's rights took on a
+        new urgency for Wampanoag women, with many joining the fight for women's suffrage. </p>
+    </div>
+  </div>
+
+
+
+  </br></br>
+
+
+  <h2>UNDERSTANDING THE ANTEBELLUM ERA</h2>
+  <p>This project is situated in the Antebellum era in part because Wampanoag activism was particularly vibrant during
+    these years; it's also an extremely consequential time for the United States as a whole. </p>
+
+
+  <!--Accordion tab: Antebellum-->
+  <hr class="glossary-hr">
+  <div class="accordion">
+    <input type="checkbox" id="term0" />
+    <label for="term0">The Antebellum era</label>
+    <div class="content">
+      <p><i>Antebellum</i> literally means, "before the war." In U.S. history, this refers to the years before the Civil
+        War. There's not one date that signaled the start of the Antebellum era, but many historians consider it to have
+        started with the contested election of 1824. The aftermath of this election gave rise to the populism of Andrew
+        Jackson and the formation of the Democratic party, both of which would be key forces in the events that led to
+        the
+        Civil War.</p>
+    </div>
+  </div>
+
+  <!--Accordion tab: Underground Railroad-->
+  <hr class="glossary-hr">
+  <div class="accordion">
+    <input type="checkbox" id="term1" />
+    <label for="term1">The Underground Railroad</label>
+    <div class="content">
+      <p> In 1793 the Fugitive Slave law was passed, appeasing southern states who wanted to ensure that slaves who
+        escaped into the North would not automatically be considered free. The law enabled them to retrieve their
+        “property” by publishing ads promising rewards for the return of the men, women, and children who had escaped.
+        Slave catchers were also sent into the North to kidnap them back into slavery, at times, also grabbing
+        individuals who had never been enslaved in the first place. In response, a secretive network interconnected by
+        individuals who offered safe havens and means of passage emerged that provided assistance in evading the agents,
+        resettling, and even escaping to Canada.
+
+      </p>
+      <p> In 1850, the South, angered by Northern flouting of the 1793 law insisted on stricter legislature, resulting
+        in the Fugitive Slave Act. Unlike the 1793 law, this law required federal and state officials to enforce the
+        law, and any citizen or law officer who failed to cooperate or assisted a fugitive was liable to heavy fines and
+        even imprisonment. Commissioners presiding over trials of suspected refugees from slavery were awared $10 if
+        they ruled the indivudal should be returned to slavery, but just $5 if they deemed there to be insufficient
+        evidence. The individual on trial was not allowed to testify and did not have the benefit of a jury. This caused
+        an uproar across the North—the South was now imposing their local laws on a federal level. Many anti-slavery
+        groups ramped up their efforts and formed Vigilance Committees which had streamlined plans of action to assist
+        escaped slaves. These plans included coordinating with underground railroad conductors, providing funding for
+        bail and legal assistance, and in some extraordinary cases, busting arrested individuals out of jail and court.
+
+      </p>
+      <p>People of color were primarily responsible for sheltering runaways in Massachusetts and assisting them in
+        resettling. Many escaped the South via water vessel, not over land, with the ships often bound for ports in
+        Wampanoag territory, including New Bedford and Vineyard Haven. Boston was also a central landing point, offering
+        escapees the opportunity to disappear into the city population or benefit from the assistance of its renown
+        anti-slavery community. Some Wampanoag were conductors on the underground railroad, while other communities
+        offered the safety of their independent lands and intermarriage into the tribe. </p>
+      </p>
+    </div>
+  </div>
+
+  <!--Accordion tab: Anti-Slavery Society-->
+  <hr class="glossary-hr">
+  <div class="accordion">
+    <input type="checkbox" id="term2" />
+    <label for="term2">The Anti-Slavery Society</label>
+    <div class="content">
+      <p>The American Anti-Slavery Society (AASS), founded in 1833, was the first and largest grassroots movement of its
+        kind in the United States—with membership estimated to have reached as high as 200,000 at its height. About
+        2,000 AASS Auxillary groups across the north were engaged in coordinated efforts to effect change—often joining
+        together to collectively strategize, protest, and petition for the cause.</p>
+
+    </div>
+  </div>
+
+  <!--Accordion tab: The Liberator-->
+  <hr class="glossary-hr">
+  <div class="accordion">
+    <input type="checkbox" id="term3" />
+    <label for="term3">The Liberator</label>
+    <div class="content">
+      <p>The Liberator out of Boston was the official newspaper of the American Anti-Slavery Society and was run by
+        William Lloyd Garrison the leader of the organization. Subscriptions to the paper helped support the Societies
+        activities, as well as act as a central place to inform and organize members. Many petitions were published in
+        the paper, allowing supporters to join in petition campaigns and support efforts far and wide.</p>
+
     </div>
   </div>
 </div>
+</div>
+
 {% endblock content %}
-
-
