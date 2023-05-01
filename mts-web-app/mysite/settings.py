@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('APP_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['more_than_surviving.org']
 
 CSRF_TRUSTED_ORIGINS = ['https://zeldaskywalker-fictional-enigma-976xjv9rj79c99p6-8000.preview.app.github.dev']
 
