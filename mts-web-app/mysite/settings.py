@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
+import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-*%(!h7%s(bg_#8lt8=tx1ub=chwz3yq$p20defdn@fwl3ne)0="
+SECRET_KEY = os.environ.get('APP_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -79,11 +81,11 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "ejmikljk",
-        "USER": "ejmikljk",
-        "PASSWORD": "4do3hjsLVSeFVuSJ0Mxnj7XsH4k9j9Vf",
-        "HOST": "baasu.db.elephantsql.com",
-        "PORT": "5432",
+        "NAME": os.environ.get("DB_NAME", "ejmikljk"),
+        "USER": os.environ.get("DB_USER", "ejmikljk"),
+        "PASSWORD": os.environ.get("DB_PASSWORD", "4do3hjsLVSeFVuSJ0Mxnj7XsH4k9j9Vf"),
+        "HOST": os.environ.get("DB_HOST", "baasu.db.elephantsql.com"),
+        'PORT': os.environ.get('DB_PORT', "5432"),
     }
 }
 

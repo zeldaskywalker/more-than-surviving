@@ -83,8 +83,7 @@ class Images(models.Model):
     """Python object for accessing and managing data for Images."""
 
     image_id = models.CharField(max_length=50, primary_key=True)
-    header_url = models.URLField()
-    timeline_url = models.CharField(max_length=10000)
+    url = models.URLField()
     alt_text = models.CharField(max_length=10000)
     caption = models.CharField(max_length=10000)
     credit = models.CharField(max_length=10000)

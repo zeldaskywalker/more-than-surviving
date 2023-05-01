@@ -6,17 +6,17 @@
         <h2>ACTIVIST</h2>
     </div>
     <div>
-        <h1>{{ activists.name }}</h1>
-    </div class="caption">
-    <div>
-        {{ activists.date_of_birth }} – {{ activists.date_of_death }} | {{ activists.tribal_affiliations }}
+        <h1 style="width: 400px;">{{ activists.name }}</h1>
     </div>
+    <span class="caption" style="font-size:21px">
+        {{dob}} – {{dod}} | {{tribal_affiliations}}
+    </span>
     <hr id="about-hr">
     <div>
-        {{ activists.image_ids }}
+        <img src="{{image_url}}" alt="{{image_alt_text}}" height="50%">
     </div>
     <div>
-        {{ activists.long_bio }}
+        {{ activists.long_bio|linebreaks }}
     </div>
     <br>
     <br>
@@ -34,7 +34,7 @@
     <div>
         <div class="works-cited">Work Cited</div>
         <br>
-        <div class="citations">{{ activists.citations }}</div>
+        <div class="citations">{{ activists.citations|linebreaks }}</div>
     </div>
     <br>
     <br>

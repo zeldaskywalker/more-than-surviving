@@ -6,17 +6,17 @@
         <h2>EVENT</h2>
     </div>
     <div>
-        <h1>{{ events.title }}</h1>
-    </div class="caption">
-    <div>
-        {{ events.start_date }} - {{ events.end_date }} | {{events.location_names}}
+        <h1 style="width: 400px;">{{ events.title }}</h1>
     </div>
+    <span class="caption" style="font-size:21px">
+        {{event_date_string}} | {{location_names}}
+    </span>
     <hr id="about-hr">
     <div>
-        {{ events.image_ids }}
+        <img src="{{image_url}}" alt="{{image_alt_text}}" height="50%">
     </div>
     <div>
-        {{ events.long_description }}
+        {{ events.long_description|linebreaks }}
     </div>
     <br>
     <br>
@@ -34,7 +34,7 @@
     <div>
         <div class="works-cited">Work Cited</div>
         <br>
-        <div class="citations">{{ events.citations }}</div>
+        <div class="citations">{{ events.citations|linebreaks }}</div>
     </div>
     <br>
     <br>
