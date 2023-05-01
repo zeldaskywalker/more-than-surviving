@@ -6,5 +6,23 @@
     <div style="width: 400px;">
         <h1>WAMPANOAG POLITICAL ACTIVITY</h1>
     </div>
+    <span class="caption" style="font-size: 21px; letter-spacing: 0.23px;">
+        1830-1850
+    </span>
+    <div class="row">
+    {% for d in all_data %}
+        <div class="col-md-3"><!-- HERE -->
+            <div class="card mb-4 shadow-sm"><!-- HERE -->
+                <img class="card-img-top" src="{{d.image_url}}" alt="{{d.image_alt_text}}">
+                <div class="card-body">
+                    <div style="font-size:16px; letter-spacing: 0.18px; font-weight: 700;">{{d.title}}</div>
+                    <div style="font-size:12px; letter-spacing: 0.13px;">{{d.dates}} | {{d.location}}</div>
+                    <a href="{{d.button_path}}" class="btn btn-primary">View More</a>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+    {% endfor %}
+    </div>
 </div>
 {% endblock content %}
