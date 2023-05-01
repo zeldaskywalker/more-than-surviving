@@ -84,11 +84,11 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("DB_NAME", "ejmikljk"),
-        "USER": os.environ.get("DB_USER", "ejmikljk"),
-        "PASSWORD": os.environ.get("DB_PASSWORD", "4do3hjsLVSeFVuSJ0Mxnj7XsH4k9j9Vf"),
-        "HOST": os.environ.get("DB_HOST", "baasu.db.elephantsql.com"),
-        'PORT': os.environ.get('DB_PORT', "5432"),
+        "NAME": os.getenv("DB_NAME", "ejmikljk"),
+        "USER": os.getenv("DB_USER", "ejmikljk"),
+        "PASSWORD": os.getenv("DB_PASSWORD", "4do3hjsLVSeFVuSJ0Mxnj7XsH4k9j9Vf"),
+        "HOST": os.getenv("DB_HOST", "baasu.db.elephantsql.com"),
+        'PORT': os.getenv('DB_PORT', "5432"),
     }
 }
 
