@@ -203,12 +203,19 @@ button {
     color: #FFFFFF;
 }
 
+#landing-bottom-container {
+    width: auto;
+    align-items: center;
+}
+
 #landing-buttons-container {
     height: 20%;
+    width: 50%;
     color: var(--main-bg-color);
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    margin: 0 auto;
 }
 
 #landing-about-container {
