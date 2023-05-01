@@ -1,3 +1,4 @@
+
 :root {
     --main-bg-color: #FFFFF6;
     --document-purple: #60589C;
@@ -18,6 +19,9 @@ hr {
     border-top: 2px solid var(--anti-slavery-gold);
 }
 
+.glossary-hr {
+    border-top: 2px solid var(--anti-slavery-gold);
+}
 html,
 body {
     background-color: var(--main-bg-color);
@@ -31,6 +35,9 @@ body {
     font-style: normal;
     letter-spacing: 0.18px;
     text-align: left;
+    max-width: 1160px; 
+	margin: 0 auto !important; 
+	float: none !important; 
 }
 
 title {
@@ -56,7 +63,10 @@ h1 {
 
 #landing-main-div {
     /* TEMPORARY */
-    background-color: var(--document-gray);
+    /*UPDATE IMAGE URL*/
+    background-image: url("https://i.imgur.com/n5XkHyH.jpg");
+    background-position: center;
+    background-size: cover;
     width: 100%;
     height: auto;
 }
@@ -69,7 +79,7 @@ h1 {
 }
 
 #landing-h1 {
-    text-shadow: 5px 2px 9px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 5px 2px 8px rgba(0, 0, 0, 0.5);
     margin-block-start: 0em;
     margin-block-end: 0em;
     text-align: center;
@@ -79,6 +89,7 @@ h1 {
     letter-spacing: 0.4px;
     line-height: 43px;
     padding: 1em;
+    
 }
 
 h2 {
@@ -154,6 +165,13 @@ h4 {
     text-align: left;
 }
 
+.home-image-caption {
+
+font-size: 12px;
+color: var(--document-gray);
+letter-spacing: 0.13px;
+}
+
 #about-caption {
     color: var(--document-purple);
     font-size: 21px;
@@ -221,8 +239,9 @@ button {
 }
 
 #issues-page-container {
-    padding: 50px;
+    padding: 20px 50px 50px 50px;
 }
+
 
 
 #landing-about-text {
@@ -391,6 +410,7 @@ p a:hover {
 .about-pic {
     flex: 1;
     padding-right: 10px;
+    max-width: 300px;
 }
 
 .about-bio-text {
@@ -407,6 +427,17 @@ p a:hover {
     margin-bottom: 20px;
 }
 
+/* THE IMAGE IN THIS NEEDS TO BE REPLACED WITH THE IMAGE HERE: /workspaces/more-than-surviving/mts-web-app/mts/static/images/issues-bg.png */
+
+.issues-header {
+    background-image: url("https://i.imgur.com/kTYVfen.png");
+    margin-bottom: -10px;
+}
+
+#issues-header-container {
+    padding: 50px 50px 50px 50px;
+}
+
 /* Accordion Styles for Glossary Page*/
 
 .accordion {}
@@ -417,9 +448,19 @@ p a:hover {
 
 .accordion label {
     display: block;
-    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: var(--document-purple);
     font-weight: bold;
     cursor: pointer;
+    text-transform: uppercase;
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 40px;  
+    background-image: url('https://i.imgur.com/CizzedP.png');
+ 
 }
 
 .accordion .content {
@@ -428,9 +469,34 @@ p a:hover {
     transition: max-height 0.2s ease-out;
 }
 
-.accordion input[type="checkbox"]:checked~.content {
+.accordion input[type="checkbox"]:checked ~ .content {
     max-height: 1000px;
     transition: max-height 0.4s ease-in;
 }
 
+
+.indigenous-rights {
+    color: var(--indigenous-rights-red);
+}
+
+.racial-equality {
+    color: var(--racial-equality-green);
+}
+
+.antislavery {
+    color: var(--anti-slavery-gold);
+}
+
+.temperance {
+    color: var(--temperance-blue);
+}
+
+.womens-rights {
+    color: var(--womens-rights-purple);
+
+}
+
+.light-text {
+    color: var(--main-bg-color);
+}
 
