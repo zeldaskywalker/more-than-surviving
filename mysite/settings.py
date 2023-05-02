@@ -29,12 +29,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("APP_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.getenv("DEBUG", "False") == "True"
-DEBUG = "True"
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,mts-app-k47f7.ondigitalocean.app").split(",")
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,mts-app-k47f7.ondigitalocean.app,morethansurviving.org").split(",")
 
 CSRF_TRUSTED_ORIGINS = ['https://zeldaskywalker-fictional-enigma-976xjv9rj79c99p6-8000.preview.app.github.dev']
 

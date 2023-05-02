@@ -22,6 +22,7 @@ hr {
 .glossary-hr {
     border-top: 2px solid var(--anti-slavery-gold);
 }
+
 html,
 body {
     background-color: var(--main-bg-color);
@@ -507,3 +508,52 @@ p a:hover {
     color: var(--main-bg-color);
 }
 
+#indigenous-rights-button {
+    border-radius: 7.5px;
+    opacity: 1;
+    background-color: var(--indigenous-rights-red);
+    border: none;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+#anti-slavery-button {
+    border-radius: 7.5px;
+    opacity: 1;
+    background-color: var(--anti-slavery-gold);
+    border: none;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+#womens-rights-button {
+    border-radius: 7.5px;
+    opacity: 1;
+    background-color: var(--womens-rights-purple);
+    border: none;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+#temperance-button {
+    border-radius: 7.5px;
+    opacity: 1;
+    background-color: var(--temperance-blue);
+    border: none;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+#racial-equality-button {
+    border-radius: 7.5px;
+    opacity: 1;
+    background-color: var(--racial-equality-green);
+    border: none;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+#issue-key {
+    display: flex;
+    justify-content: space;
+}
