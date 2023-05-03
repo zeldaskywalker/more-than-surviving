@@ -16,10 +16,14 @@
     <div class="landing-bottom-container">
         <div id="landing-buttons-container">
             <div>
-                <a href="/map"><button style="background-color:#867EC9">VIEW THE MAP</button></a>
+                <a href="/map">
+                    <button style="background-color:#867EC9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);">
+                        VIEW THE MAP</button></a>
             </div>
             <div>
-                <a href="/timeline"><button style="background-color:#867EC9">VIEW THE TIMELINE</button></a>
+                <a href="/timeline">
+                    <button style="background-color:#867EC9; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.252);">
+                        VIEW THE TIMELINE</button></a>
             </div>
         </div>
     </div>
@@ -90,12 +94,18 @@
         1. Add a new image to /static/images
         2. Replace the image name in the <img src> tag
         3. Replace the title in the <h3>, then replace the date and location in the line below
-        4. Change the event or activist id in the link -->
+        4. Change the event or activist id in the link
+    
+        Notice that the spacing in this section is... a bit ad hoc. 
+        Be sure to keep the double break (</br></br>) after the image 
+        and the spaces (&nbsp;&nbsp;) between issue tags.-->
 
         <!-- First item in Explore section-->
         <div class="explore-item">
             <img src="{% static '/images/EulogyHome.png' %}">
-            <p>//Issues tag will go here!//</p>
+            </br></br>
+            <p><button id="indigenous-rights-button" disabled>INDIGENOUS RIGHTS</button>&nbsp;&nbsp;<button
+                    id="racial-equality-button" disabled>RACIAL EQUALITY</button></p>
             <h3>Eulogy on King Philip</h3>
             <p class="home-image-caption">January 8, 1836 | Boston</p>
             <a href="/event/EVT4"><button>LEARN MORE</button></a>
@@ -104,17 +114,20 @@
         <!-- Second item in Explore section-->
         <div class="explore-item">
             <img src="{% static '/images/RailroadsHome.png' %}">
-            <p>//Issues tag will go here!//</p>
+            </br></br>
+            <p><button id="racial-equality-button" disabled>RACIAL EQUALITY</button></p>
             <h3>Desegregating the Railroads</h3>
             <p class="home-image-caption">1836 - 1843 | Nantucket and Mashpee</p>
             <a href="/event/EVT5"><button>LEARN MORE</button></a>
         </div>
-      
+
 
         <!-- Third item in Explore section-->
         <div class="explore-item">
             <img src="{% static '/images/WilliamApesHome.png' %}">
-            <p>//Issues tag will go here!//</p>
+            </br></br>
+            <p><button id="indigenous-rights-button" disabled>INDIGENOUS RIGHTS</button>&nbsp;&nbsp;<button
+                    id="racial-equality-button" disabled>RACIAL EQUALITY</button></p>
             <h3>William Apes</h3>
             <p class="home-image-caption">1798 - 1839</p>
             <a href="/activist/ACT2"><button>LEARN MORE</button></a>
