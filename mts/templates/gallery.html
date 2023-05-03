@@ -6,9 +6,21 @@
     <div style="width: 400px;">
         <h1>WAMPANOAG POLITICAL ACTIVITY</h1>
     </div>
-    <span class="caption" style="font-size: 21px; letter-spacing: 0.23px;">
-        1830-1850
-    </span>
+    <div class="caption" style="font-size:21px; letter-spacing: 0.23px; font-weight: 700;">
+        1830 - 1850
+    </div>
+    <hr style="border-top: 2px solid #5C5B5B;">
+    <div class="caption" id="issue-key">
+        <div style="padding-right:10px;">ISSUE KEY</div>
+        <div>
+          <button id="indigenous-rights-button" disabled>INDIGENOUS RIGHTS</button>
+          <button id="anti-slavery-button" disabled>ANTI-SLAVERY</button>
+          <button id="womens-rights-button" disabled>WOMEN'S RIGHTS</button>
+          <button id="temperance-button" disabled>TEMPERANCE</button>
+          <button id="racial-equality-button" disabled>RACIAL EQUALITY</button>
+        </div>
+    </div>
+    <hr style="border-top: 2px solid #5C5B5B;">
     <div class="row">
     {% for d in all_data %}
         <div class="col-md-3"><!-- HERE -->
@@ -16,7 +28,7 @@
                 <img class="card-img-top" src="{{d.image_url}}" alt="{{d.image_alt_text}}">
                 <div class="card-body">
                     <div style="font-size:16px; letter-spacing: 0.18px; font-weight: 700;">{{d.title}}</div>
-                    <div style="font-size:12px; letter-spacing: 0.13px;">{{d.dates}} | {{d.location}}</div>
+                    <div style="font-size:12px; letter-spacing: 0.13px; font-weight: 500;">{{d.dates}} | {{d.location}}</div>
                     <a href="{{d.button_path}}"><button>LEARN MORE</button></a>
                 </div>
             </div>

@@ -44,8 +44,6 @@ def gallery_view_dict(events, activists, images_dict):
             'dates': date_string,
             'location': location_string,
             'button_path': f'/event/{event.event_id}'
-            # 'button_link_type': 'event',
-            # 'button_link_key': {event.event_id}
         }
         all_gallery_cards.append(gallery_card_info)
     
@@ -53,18 +51,16 @@ def gallery_view_dict(events, activists, images_dict):
         gallery_card_info = {}
         dob = activist.date_of_birth.strftime("%Y")
         dod = activist.date_of_death.strftime("%Y")
-        date_string = event_date_string(start_date, end_date)
+        date_string = event_date_string(dob, dod)
         first_image_id = activist.image_ids[0]
         location_string = ' + '.join(activist.tribal_affiliations)
         gallery_card_info = {
             'title': activist.name,
             'image_url': images_dict[first_image_id]['url'],
             'alt_text': images_dict[first_image_id]['alt'],
-            'dates': event_date_string,
+            'dates': date_string,
             'location': location_string,
             'button_path': f'/activist/{activist.activist_id}'
-            # 'button_link_type': 'activist',
-            # 'button_link_key': {activist.activist_id}
         }
         all_gallery_cards.append(gallery_card_info)
 
