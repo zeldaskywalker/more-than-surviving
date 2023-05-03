@@ -2,14 +2,17 @@
 
 {% block content %}
 <head>
-<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-<link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
-<style>
-    #map { width: 95% }
-</style>
+  <meta charset="utf-8">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <style>
+    .mapboxgl-popup-content {
+      width: 400px;
+    }
+  </style>
 </head>
-<div id="timeline-page-container">
+<div id="map-page-container">
     <div>
       <h2>MAP</h1>
     </div>
@@ -31,52 +34,56 @@
       </div>
     </div>
     <hr style="border-top: 2px solid #5C5B5B;">
-    <div id="map"></div>
+    <div id="map-container">
+      <div id="main-map"></div>
+    </div>
 </div>
 <script>
+var map_data = {{ map_geojson | safe }};
 // TO MAKE THE MAP APPEAR YOU MUST
 // ADD YOUR ACCESS TOKEN FROM
 // https://account.mapbox.com
 mapboxgl.accessToken = 'pk.eyJ1IjoiemVsZGFza3l3YWxrZXIiLCJhIjoiY2xmdThkOWJwMDhjZzNmbW9jc2NsZzZ1ZCJ9.Qpgl1f0WUUuheTTC5Wzn3A';
     const map = new mapboxgl.Map({
-    container: 'map', // container ID
+    container: 'main-map', // container ID
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-    style: 'mapbox://styles/mapbox/outdoors-v12', // style URL
-    center: [-69.9896, 41.2624], // starting position [lng, lat]
-    zoom: 12 // starting zoom
+    style: 'mapbox://styles/mapbox/light-v11', // style URL
+    center: [-70.6896, 41.7854], // starting position [lng, lat]
+    zoom: 7.7 // starting zoom
 });
 /* 
 Add an event listener that runs
   when a user clicks on the map element.
 */
 map.on('load', () => {
-    map.addSource('my-data', {
+    map.addSource('events', {
         "type": "geojson",
-        "data": {
-            "type": "Feature",
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-69.9896, 41.2624]
-            },
-            "properties": {
-                "title": "Nantucket Battle for Desegregated Schools",
-                "description": "A six year battle on Nantucket that resulted in equal access to education in Massachusetts.",
-                "location": "Nantucket",
-                "issue_type": "Racial Equality",
-                "year": 1846
-            }
-        }
+        "data": map_data
     });
     map.addLayer({
         'id': 'data-layer',
         'type': 'circle',
-        'source': 'my-data',
+        'source': 'events',
         'paint': {
-            'circle-radius': 4,
-            'circle-stroke-width': 2,
-            'circle-color': 'red',
-            'circle-stroke-color': 'white'
-            }
+          'circle-radius': 6,
+          'circle-stroke-width': 1,
+          'circle-color': [
+            'match',
+            ['get', 'issue_type'],
+            'Indigenous Rights',
+            '#BB604D',
+            'Anti-Slavery',
+            '#D7942A',
+            "Women's Rights",
+            '#867EC9',
+            'Temperance',
+            '#819CB9',
+            'Racial Equality',
+            '#589C82',
+            'red'
+          ],
+          'circle-stroke-color': 'white'
+        },
     });
 });
 
@@ -98,13 +105,23 @@ map.on('click', (event) => {
     Create a popup, specify its options 
     and properties, and add it to the map.
   */
+    img_string = `<div>
+                    <img id="map-img" src="${feature.properties.image_url}" alt="${feature.properties.image_alt_text}">
+                  </div>`
     const popup = new mapboxgl.Popup({ offset: [0, -15] })
                             .setLngLat(feature.geometry.coordinates)
                             .setHTML(
-                                `<div style="border-radius:25px; background:#d7942a; padding:5px; width:40%; text-align:center"><b>${feature.properties.issue_type}</b></div>
-                                <h2>${feature.properties.title}</h2>
-                                <h4>${feature.properties.location} | ${feature.properties.year}</h4>
-                                ${feature.properties.description}`)
+                                `
+                                <div id="map-popup">
+                                  <div>
+                                    <div>${feature.properties.issue_types}</div>
+                                    <h3>${feature.properties.title}</h2>
+                                    <h4>${feature.properties.location} | ${feature.properties.date_string}</h4>
+                                    <div style="font-size:12px; letter-spacing:0.13px">${feature.properties.description}</div>
+                                    <br>
+                                    <a href="${feature.properties.link_path}"><i><b>Learn More</b></i></a>
+                                  </div>
+                                </div>`)
     .addTo(map);
     });
 </script>

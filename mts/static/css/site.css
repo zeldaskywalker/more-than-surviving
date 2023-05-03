@@ -246,6 +246,10 @@ button {
     padding: 50px;
 }
 
+#map-page-container {
+    padding: 50px;
+}
+
 #issues-page-container {
     padding: 20px 50px 50px 50px;
 }
@@ -514,6 +518,16 @@ p a:hover {
     color: var(--document-gray);
 }
 
+#map-container {
+    width: 100%;
+    height: 550px;
+}
+
+#main-map {
+    width: inherit;
+    height: 100%;
+}
+
 #indigenous-rights-button {
     border-radius: 7.5px;
     opacity: 1;
@@ -561,5 +575,15 @@ p a:hover {
 
 #issue-key {
     display: flex;
-    justify-content: space;
+}
+
+#map-popup {
+    font-family: 'Red Hat Display', sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+#map-img {
+    max-width: 100%;
+    height: auto;
 }

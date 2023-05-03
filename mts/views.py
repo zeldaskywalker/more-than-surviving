@@ -11,7 +11,18 @@ class HomeView(generic.TemplateView):
     template_name = 'home.html'
 
 class MapView(generic.TemplateView):
+    events = Events.objects.all()
+    images = Images.objects.all()
+    images_dict = json_translation.create_images_dict(images)
+
+    events_geojson = json_translation.events_to_map_geojson(events, images_dict)
+
     template_name = 'map.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(MapView, self).get_context_data(**kwargs)
+        context['map_geojson'] = self.events_geojson
+        return context
 
 class TimelineView(generic.TemplateView):
     events = Events.objects.all()
