@@ -147,7 +147,7 @@ def events_to_timeline_json(events, final_images_dict):
 
         text_dict = {
             "headline": event.title,
-            "text": event.short_description,
+            "text": event.short_description + '<br>' + '<a class="caption" style="font-weight: 500; font-style: italic; font-size: 11px" href="/event/' + event.event_id+ '"><i><b>Continue reading</b></i></a>',
         }
 
         event_dict["text"] = text_dict
