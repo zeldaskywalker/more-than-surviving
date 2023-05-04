@@ -204,6 +204,9 @@ button {
     color: #FFFFFF;
 }
 
+.spot-button-container {
+    padding-top: 15px;
+}
 #landing-bottom-container {
     width: auto;
     align-items: center;
