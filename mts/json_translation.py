@@ -22,6 +22,7 @@ def create_images_dict(images):
     for image in images:
         final_images_dict[image.image_id] = {
             'url': image.url,
+            'gallery_url': image.gallery_url,
             'caption': image.caption,
             'credit': image.credit,
             'alt': image.alt_text
@@ -52,7 +53,7 @@ def gallery_view_dict(events, activists, images_dict):
 
         gallery_card_info = {
             'title': event.title,
-            'image_url': images_dict[first_image_id]['url'],
+            'image_url': images_dict[first_image_id]['gallery_url'],
             'alt_text': images_dict[first_image_id]['alt'],
             'dates': date_string,
             'location': location_string,

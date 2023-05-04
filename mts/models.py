@@ -84,6 +84,7 @@ class Images(models.Model):
 
     image_id = models.CharField(max_length=50, primary_key=True)
     url = models.URLField()
+    gallery_url = models.URLField()
     alt_text = models.CharField(max_length=10000)
     caption = models.CharField(max_length=10000)
     credit = models.CharField(max_length=10000)
