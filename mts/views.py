@@ -11,7 +11,7 @@ class HomeView(generic.TemplateView):
     template_name = 'home.html'
 
 class MapView(generic.TemplateView):
-    events = Events.objects.all()
+    events = Events.objects.filter(map=True)
     images = Images.objects.all()
     images_dict = json_translation.create_images_dict(images)
 
