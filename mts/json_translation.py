@@ -37,13 +37,27 @@ def gallery_view_dict(events, activists, images_dict):
         date_string = event_date_string(start_date, end_date)
         location_string = ' + '.join(event.location_names)
         first_image_id = event.image_ids[0]
+        html_issue_tags = ""
+        for issue in event.issue_types:
+            if issue == "Indigenous Rights":
+                html_issue_tags += "<button id='indigenous-rights-button' disabled>INDIGENOUS RIGHTS</button> "
+            elif issue == "Anti-Slavery":
+                html_issue_tags += "<button id='anti-slavery-button' disabled>ANTI-SLAVERY</button> "
+            elif issue == "Women's Rights":
+                html_issue_tags += "<button id='womens-rights-button' disabled>WOMEN'S RIGHTS</button> "
+            elif issue == "Temperance":
+                html_issue_tags += "<button id='temperance-button' disabled>TEMPERANCE</button> "
+            elif issue == "Racial Equality":
+                html_issue_tags += "<button id='racial-equality-button' disabled>RACIAL EQUALITY</button> "
+
         gallery_card_info = {
             'title': event.title,
             'image_url': images_dict[first_image_id]['url'],
             'alt_text': images_dict[first_image_id]['alt'],
             'dates': date_string,
             'location': location_string,
-            'button_path': f'/event/{event.event_id}'
+            'button_path': f'/event/{event.event_id}',
+            'issue_types': html_issue_tags,
         }
         all_gallery_cards.append(gallery_card_info)
     
@@ -60,7 +74,7 @@ def gallery_view_dict(events, activists, images_dict):
             'alt_text': images_dict[first_image_id]['alt'],
             'dates': date_string,
             'location': location_string,
-            'button_path': f'/activist/{activist.activist_id}'
+            'button_path': f'/activist/{activist.activist_id}',
         }
         all_gallery_cards.append(gallery_card_info)
 

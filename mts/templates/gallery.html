@@ -21,19 +21,20 @@
         </div>
     </div>
     <hr style="border-top: 2px solid #5C5B5B;">
-    <div class="row">
+    <div class="row justify-content-around">
     {% for d in all_data %}
-        <div class="col-md-3"><!-- HERE -->
+        <div class="col-md-3" style="width: 29%"><!-- HERE -->
             <div class="card mb-4 shadow-sm"><!-- HERE -->
                 <img class="card-img-top" src="{{d.image_url}}" alt="{{d.image_alt_text}}">
-                <div class="card-body">
-                    <div style="font-size:16px; letter-spacing: 0.18px; font-weight: 700;">{{d.title}}</div>
-                    <div style="font-size:12px; letter-spacing: 0.13px; font-weight: 500;">{{d.dates}} | {{d.location}}</div>
+                <div class="card-body" style="background-color: #FFFFF6; border-radius: 10px; padding-top: 8px;">
+                    <div>{% autoescape off %}{{d.issue_types}}{% endautoescape %}</div>
+                    <div><h3 style="font-size:16px; letter-spacing: 0.18px; font-weight: 700; padding-top: 10px; margin-bottom: 4px">{{d.title}}</h3></div>
+                    <div><h4 style="font-size:12px; letter-spacing: 0.13px; font-weight: 500;">{{d.dates}} | {{d.location}}</h4></div>
                     <a href="{{d.button_path}}"><button>LEARN MORE</button></a>
                 </div>
             </div>
         </div>
-        {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+        {% if forloop.counter|divisibleby:3 %}</div><div class="row justify-content-around">{% endif %}
     {% endfor %}
     </div>
 </div>
