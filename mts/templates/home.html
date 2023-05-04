@@ -89,50 +89,39 @@
     <hr>
     <h1>EXPLORE</h1>
     <hr>
-    <div id="landing-example-explore">
-        <!-- To change one of the "Explore" items:
-        1. Add a new image to /static/images
-        2. Replace the image name in the <img src> tag
-        3. Replace the title in the <h3>, then replace the date and location in the line below
-        4. Change the event or activist id in the link
-    
-        Notice that the spacing in this section is... a bit ad hoc. 
-        Be sure to keep the double break (</br></br>) after the image 
-        and the spaces (&nbsp;&nbsp;) between issue tags.-->
-
-        <!-- First item in Explore section-->
-        <div class="explore-item">
-            <img src="{% static '/images/EulogyHome.png' %}">
-            </br></br>
-            <p><button id="indigenous-rights-button" disabled>INDIGENOUS RIGHTS</button>&nbsp;&nbsp;<button
-                    id="racial-equality-button" disabled>RACIAL EQUALITY</button></p>
-            <h3>Eulogy on King Philip</h3>
-            <p class="home-image-caption">January 8, 1836 | Boston</p>
-            <a href="/event/EVT4"><button>LEARN MORE</button></a>
+    <div class="row justify-content-around">
+        <div class="col-md-3" style="width: 29%;"><!-- HERE -->
+            <div class="card mb-4 shadow-sm"><!-- HERE -->
+                <img class="card-img-top" src="{% static '/images/EulogyHome.png' %}">
+                <div class="card-body" style="background-color: #FFFFF6; border-radius: 10px; padding-top: 8px;">
+                    <div><button id='indigenous-rights-button' disabled>INDIGENOUS RIGHTS</button> <button id='racial-equality-button' disabled>RACIAL EQUALITY</button></div>
+                    <div><h3 style="font-size:16px; letter-spacing: 0.18px; font-weight: 700; padding-top: 10px; margin-bottom: 4px">Eulogy on King Philip</h3></div>
+                    <div><h4 style="font-size:12px; letter-spacing: 0.13px; font-weight: 500;">1836 | Boston</h4></div>
+                    <a href="/event/EVT4"><button>LEARN MORE</button></a>
+                </div>
+            </div>
         </div>
-
-        <!-- Second item in Explore section-->
-        <div class="explore-item">
-            <img src="{% static '/images/RailroadsHome.png' %}">
-            </br></br>
-            <p><button id="racial-equality-button" disabled>RACIAL EQUALITY</button></p>
-            <h3>Desegregating the Railroads</h3>
-            <p class="home-image-caption">1836 - 1843 | Nantucket and Mashpee</p>
-            <a href="/event/EVT5"><button>LEARN MORE</button></a>
+        <div class="col-md-3" style="width: 29%;"><!-- HERE -->
+            <div class="card mb-4 shadow-sm"><!-- HERE -->
+                <img class="card-img-top" src="{% static '/images/RailroadsHome.png' %}">
+                <div class="card-body" style="background-color: #FFFFF6; border-radius: 10px; padding-top: 8px;">
+                    <div><button id="racial-equality-button" disabled>RACIAL EQUALITY</button></div>
+                    <div><h3 style="font-size:16px; letter-spacing: 0.18px; font-weight: 700; padding-top: 10px; margin-bottom: 4px">Desegregating the Railroads</h3></div>
+                    <div><h4 style="font-size:12px; letter-spacing: 0.13px; font-weight: 500;">1836 - 1843 | Nantucket + Mashpee</h4></div>
+                    <a href="/event/EVT5"><button>LEARN MORE</button></a>
+                </div>
+            </div>
         </div>
-
-
-        <!-- Third item in Explore section-->
-        <div class="explore-item">
-            <img src="{% static '/images/WilliamApesHome.png' %}">
-            </br></br>
-            <p><button id="indigenous-rights-button" disabled>INDIGENOUS RIGHTS</button>&nbsp;&nbsp;<button
-                    id="racial-equality-button" disabled>RACIAL EQUALITY</button></p>
-            <h3>William Apes</h3>
-            <p class="home-image-caption">1798 - 1839</p>
-            <a href="/activist/ACT2"><button>LEARN MORE</button></a>
+        <div class="col-md-3" style="width: 29%;"><!-- HERE -->
+            <div class="card mb-4 shadow-sm"><!-- HERE -->
+                <img class="card-img-top" src="{% static '/images/WilliamApesHome.png' %}">
+                <div class="card-body" style="background-color: #FFFFF6; border-radius: 10px; padding-top: 8px;">
+                    <div><h3 style="font-size:16px; letter-spacing: 0.18px; font-weight: 700; padding-top: 10px; margin-bottom: 4px">William Apes</h3></div>
+                    <div><h4 style="font-size:12px; letter-spacing: 0.13px; font-weight: 500;">1798 - 1839 | Pequot + Mashpee</h4></div>
+                    <a href="/activist/ACT2"><button>LEARN MORE</button></a>
+                </div>
+            </div>
         </div>
-
     </div>
 </div>
 {% endblock content %}
