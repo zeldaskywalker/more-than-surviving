@@ -91,6 +91,8 @@ def events_to_timeline_json(events, final_images_dict):
 
         media_dict = final_images_dict[first_image_id]
 
+        del media_dict['caption']
+
         event_dict["media"] = media_dict
 
         start_date_accuracy = event.start_date_accuracy
