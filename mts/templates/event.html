@@ -13,23 +13,19 @@
     </span>
     <hr id="about-hr">
     <div>
-        <img src="{{image_url}}" alt="{{image_alt_text}}" height="50%">
+        <div>
+            <img style="float: left; margin-right: 25px; max-width: 100%" src="{{image_url}}" alt="{{image_alt_text}}">
+        </div>
+        <div style="text-align: justify;">
+            {{ events.long_description|linebreaks }}
+        </div>
     </div>
-    <div>
-        {{ events.long_description|linebreaks }}
-    </div>
-    <br>
-    <br>
     <div>
         map here
     </div>
-    <br>
-    <br>
     <div>
-        buttons here
+        <a href="/map"><button>GO TO MAP</button></a> <a href="/timeline"><button>GO TO TIMELINE</button></a>
     </div>
-    <br>
-    <br>
     <hr id="about-hr">
     <div>
         <div class="works-cited">Work Cited</div>

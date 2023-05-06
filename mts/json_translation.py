@@ -37,7 +37,11 @@ def gallery_view_dict(events, activists, images_dict):
         end_date = event.end_date.strftime("%Y")
         date_string = event_date_string(start_date, end_date)
         location_string = ' + '.join(event.location_names)
-        first_image_id = event.image_ids[0]
+        if event.image_ids:
+
+            first_image_id = event.image_ids[0]
+        else:
+            first_image_id = 'MTSPlaceholder_image_1.jpg'
         html_issue_tags = ""
         for issue in event.issue_types:
             if issue == "Indigenous Rights":
@@ -88,13 +92,15 @@ def events_to_timeline_json(events, final_images_dict):
     for event in events:
         event_dict = {}
 
-        first_image_id = event.image_ids[0]
+        if event.image_ids:
 
-        media_dict = final_images_dict[first_image_id]
+            first_image_id = event.image_ids[0]
 
-        del media_dict['caption']
+            media_dict = final_images_dict[first_image_id]
 
-        event_dict["media"] = media_dict
+            del media_dict['caption']
+
+            event_dict["media"] = media_dict
 
         start_date_accuracy = event.start_date_accuracy
         end_date_accuracy = event.end_date_accuracy
@@ -146,9 +152,14 @@ def events_to_timeline_json(events, final_images_dict):
 
         event_dict["end_date"] = end_date_dict
 
+        if event.event_id.startswith('CON'):
+            final_description = event.short_description
+        else:
+            final_description = event.short_description + '<br>' + '<a class="caption" style="font-weight: 500; font-style: italic; font-size: 11px" href="/event/' + event.event_id+ '"><i><b>Continue reading</b></i></a>',
+
         text_dict = {
             "headline": event.title,
-            "text": event.short_description + '<br>' + '<a class="caption" style="font-weight: 500; font-style: italic; font-size: 11px" href="/event/' + event.event_id+ '"><i><b>Continue reading</b></i></a>',
+            "text": final_description
         }
 
         event_dict["text"] = text_dict
