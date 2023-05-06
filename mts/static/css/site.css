@@ -77,6 +77,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 10px;
 }
 
 #landing-h1 {
@@ -254,13 +255,13 @@ button {
 }
 
 #issues-page-container {
-    padding: 20px 50px 50px 50px;
+    padding: 50px;
 }
 
 
 
 #landing-about-text {
-    color: #1A1A1A;
+    color: var(--document-gray);
 }
 
 #landing-about-header {
@@ -271,6 +272,7 @@ button {
 .landing-child-div {
     padding-left: 25px;
     padding-right: 25px;
+ 
 }
 
 #landing-issues-container {
@@ -309,6 +311,7 @@ button {
     background-color: var(--document-purple);
     top: 0;
     color: var(--main-bg-color);
+    align-items: middle;
 }
 
 .header-container {
@@ -320,10 +323,13 @@ button {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.17px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 30px;
     padding-right: 200px;
+    align-items: middle;
+    
+
 }
 
 .works-cited {
@@ -342,18 +348,31 @@ button {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.17px;
-    text-align: left;
+    text-align: left ;
+    align-items: middle;
     /* padding: 40px; */
 }
 
 #nav-links-container {
     display: grid;
-    text-align: center;
+    text-align: center ;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+    vertical-align: middle;
+    align-items: center;
+   
 }
 
 .nav-links {
     border-right: 1px solid var(--anti-slavery-gold);
+    text-align: center;
+   vertical-align: middle;
+
+}
+
+#logo_container {
+    vertical-align: middle;
+    padding-left: 20px;
 }
 
 .footer-container {
@@ -418,7 +437,16 @@ p>a {
     text-decoration-color: var(--womens-rights-purple) !important;
 }
 
+li>a {
+    text-decoration: underline !important;
+    text-decoration-color: var(--womens-rights-purple) !important;
+}
+
 p a:hover {
+    color: var(--document-purple) !important;
+}
+
+li a:hover {
     color: var(--document-purple) !important;
 }
 
@@ -429,6 +457,7 @@ p a:hover {
     padding-right: 10px;
     max-width: 300px;
 }
+
 
 .about-bio-text {
     flex: 3;
@@ -520,6 +549,8 @@ p a:hover {
 .dark-text {
     color: var(--document-gray);
 }
+
+/* MAP STYLING */
 
 #map-container {
     width: 100%;

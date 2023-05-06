@@ -3,6 +3,8 @@
 {% block content %}
 {% load static %}
 <div id="about-page-container">
+
+    <!-- Header -->
     <div>
         <div>
             <h2>ABOUT</h2>
@@ -117,7 +119,7 @@
         <h1 id="the-team">THE TEAM</h1>
         <div class="about-bio">
             <div class="about-pic">
-                <img src="{% static '/images/bio_placeholder.png' %}">   
+                <img src="{% static '/images/majel.png' %}">
             </div>
             <div class="about-bio-text">
                 <h3>Majel Peters</h3>
@@ -219,7 +221,7 @@
 
         <div class="about-bio">
             <div class="about-pic">
-                <img src="{% static '/images/bio_placeholder.png' %}">
+                <img src="{% static '/images/EG.jpg' %}">
             </div>
             <div class="about-bio-text">
                 <h3>Estefany Marlen Gonzaga</h3>
@@ -247,7 +249,28 @@
         </div>
     </div>
     <br>
-   
+    <br>
+    <h1>ADDITIONAL CONTRIBUTORS</h1>
+
+    <!-- As the project continues, you can add additional contributors by copying the code block below.-->
+
+
+    <div class="about-bio">
+        <div class="about-pic">
+            <!--Upload the contributor image to Static > Images and replace the image filename below with the new one. -->
+            <img src="{% static '/images/bio_placeholder.png' %}"> </div>
+        <div class="about-bio-text">
+            <!--Contributor name goes between the <h3> tags.-->
+            <h3>Ramona Peters</h3>
+            <!--Contributor bio goes here.-->
+            <p>Ramona Peters Bio
+            </p>
+        </div>
+    </div>
+
+    <!--Individual bio ends here-->
+
+
     <hr id="about-hr">
     <div>
         <h1 id="tools">TOOLS</h1>
@@ -260,7 +283,7 @@
             reinforce Wampanoag presence in their homeland.</p>
         <br>
 
-        <h3>TIMELINE</h3>
+        <h3>Timeline</h3>
         <H4>TIMELINEJS</H4>
         <p>The timeline of Wampanoag political activity is powered by <a
                 href="https://timeline.knightlab.com/">TimelineJS</a>, an open source timeline creation tool developed
@@ -270,13 +293,26 @@
             place these acts of resistance in the larger context of national events.</p>
         <br>
 
-        <h3>DATABASE</h3>
+        <h3>Database</h3>
         <h4>POSTGRESQL | GEOJSON | PYTHON | GOOGLE SHEETS</h4>
         <p>More Than Surviving is powered by a custom-built API that enables seamless integration between the site's
             database and the data visualized in the interactive map and timeline. For accessibility and ease of future
             updates, the site database can be updated through a Google Colab notebook that retrieves research data that
             is put into Google Sheets. In the future, this will allow tribe members and other researchers to easily join
             and expand the project.</p>
+
+
     </div>
+
+    <hr id="about-hr">
+    <div>
+        <h3 class="womens-rights">Special Thanks To...</h1>
+            <ul>
+                <li>Professor J. Bret Maney, for guidance, feedback, and celebration.</li>
+                <li>The City University of New York Graduate Center and the <a href="https://www.gc.cuny.edu/digital-humanities">M.A. Program in Digital Humanities</a>.</li>
+            </ul>
+
+
+
 </div>
 {% endblock content %}
