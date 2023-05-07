@@ -32,6 +32,7 @@ class Activists(models.Model):
     short_bio = models.CharField(max_length=10000)
     long_bio = models.CharField(max_length=10000)
     citations = models.CharField(max_length=10000)
+    issue_types = models.JSONField()
 
     class Meta:
         """DO NOT EDIT."""
@@ -72,6 +73,7 @@ class Events(models.Model):
     image_ids = models.JSONField()
     location_names = models.JSONField()
     location_data = models.JSONField()
+    thumbnail = models.CharField(max_length=10000)
 
     class Meta:
         """DO NOT EDIT."""

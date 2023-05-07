@@ -1,7 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<head>
+    <meta charset="utf-8">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <style>
+      .mapboxgl-popup-content {
+        width: 450px;
+      }
+    </style>
+</head>
 <div id="event-page-container">
     <div>
         <h2>EVENT</h2>
@@ -22,10 +32,11 @@
             {{ events.long_description|linebreaks }}
         </div>
     </div>
-    <div>
-        map here
+    <div id="map-event-page-container">
+        <div id="event-page-map"></div>
     </div>
     <div>
+        <br>
         <a href="/map"><button>GO TO MAP</button></a> <a href="/timeline"><button>GO TO TIMELINE</button></a>
     </div>
     <hr id="about-hr">
@@ -35,27 +46,142 @@
         <div class="citations">{{ events.citations|linebreaks }}</div>
     </div>
     <br>
-    <br>
-<!-- An experiment! -->
-<!-- 
-    <hr id="about-hr">
-    <div>
-        <h2>CONTEXT</h2>
-    </br>
-<ul class="context-tl">
-    <li><b>1830</b> One event</li>
-    <li><b>1834</b> Another event</li>
-    <li><span class="womens-rights"><b>1835</b> The event we're on right now</span></li>
-    <li><b>1837</b> Another event that happened after</li>
-    <li><b>1840</b> One more event!</li>
-</ul>
--->
     <hr id="about-hr">
     <div>
         <h2>RELATED ACTIVISTS</h2>
-        related activists here
-
-    
+        <br>
+        <div class="row justify-content-around">
+            {% for activist in related_activists %}
+                <div class="col-md-3" style="width: 29%"><!-- HERE -->
+                    <div class="card mb-4 shadow-sm"><!-- HERE -->
+                        <img class="card-img-top" src="{{activist.image_url}}" alt="{{activist.image_alt_text}}">
+                        <div class="card-body" style="background-color: #FFFFF6; border-radius: 10px; padding-top: 8px;">
+                            <div>{% autoescape off %}{{activist.issue_types}}{% endautoescape %}</div>
+                            <div><h3 style="font-size:16px; letter-spacing: 0.18px; font-weight: 700; padding-top: 10px; margin-bottom: 4px">{{activist.title}}</h3></div>
+                            <div><h4 style="font-size:12px; letter-spacing: 0.13px; font-weight: 500;">{{activist.dates}} | {{activist.location}}</h4></div>
+                            <a href="{{activist.button_path}}"><button>LEARN MORE</button></a>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}</div><div class="row justify-content-around">{% endif %}
+            {% endfor %}
+            </div>
     </div>
 </div>
+<script>
+var map_data = {{ map_geojson | safe }};
+// TO MAKE THE MAP APPEAR YOU MUST
+// ADD YOUR ACCESS TOKEN FROM
+// https://account.mapbox.com
+mapboxgl.accessToken = 'pk.eyJ1IjoiemVsZGFza3l3YWxrZXIiLCJhIjoiY2xmdThkOWJwMDhjZzNmbW9jc2NsZzZ1ZCJ9.Qpgl1f0WUUuheTTC5Wzn3A';
+const map = new mapboxgl.Map({
+    container: 'event-page-map', // container ID
+    // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+    style: 'mapbox://styles/mapbox/light-v11', // style URL
+    center: [-70.6896, 41.7854], // starting position [lng, lat]
+    zoom: 7.7 // starting zoom
+});
+
+// Add zoom and rotation controls to the map.
+map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'bottom-left');
+
+/* 
+Add an event listener that runs
+    when a user clicks on the map element.
+*/
+map.on('load', () => {
+    map.addSource('events', {
+        "type": "geojson",
+        "data": map_data
+    });
+    map.addLayer({
+        'id': 'data-layer',
+        'type': 'circle',
+        'source': 'events',
+        'paint': {
+            'circle-radius': 6,
+            'circle-stroke-width': 1,
+            'circle-color': [
+            'match',
+            ['get', 'issue_type'],
+            'Indigenous Rights',
+            '#BB604D',
+            'Anti-Slavery',
+            '#D7942A',
+            "Women's Rights",
+            '#867EC9',
+            'Temperance',
+            '#819CB9',
+            'Racial Equality',
+            '#589C82',
+            'red'
+            ],
+            'circle-stroke-color': 'white'
+        },
+    });
+});
+
+/* 
+Add an event listener that runs
+    when a user clicks on the map element.
+*/
+map.on('click', (event) => {
+    // If the user clicked on one of your markers, get its information.
+    const features = map.queryRenderedFeatures(event.point, {
+        layers: ['data-layer'] // replace with your layer name
+    });
+    if (!features.length) {
+    return;
+    }
+    const feature = features[0];
+
+    // Copy coordinates array.
+    const coordinates = feature.geometry.coordinates.slice();
+    const description = feature.properties.description;
+    
+    // Ensure that if the map is zoomed out such that multiple
+    // copies of the feature are visible, the popup appears
+    // over the copy being pointed to.
+    while (Math.abs(event.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += event.lngLat.lng > coordinates[0] ? 360 : -360;
+    }
+
+
+    map.flyTo({
+        center: feature.geometry.coordinates,
+        zoom: 10
+    });
+
+    /* 
+    Create a popup, specify its options 
+    and properties, and add it to the map.
+    */
+    // const popup = new mapboxgl.Popup({ offset: [0, -15] })
+    const popup = new mapboxgl.Popup()
+                            .setLngLat(feature.geometry.coordinates)
+                            .setHTML(
+                                `
+                                <div id="map-popup">
+                                    <div>
+                                    <div>${feature.properties.issue_types}</div>
+                                    <h3>${feature.properties.title}</h2>
+                                    <h4>${feature.properties.location} | ${feature.properties.date_string}</h4>
+                                    <div style="font-size:12px; letter-spacing:0.13px">${feature.properties.description}</div>
+                                    <br>
+                                    <a href="${feature.properties.link_path}"><i><b>Learn More</b></i></a>
+                                    </div>
+                                </div>`)
+    .addTo(map)
+});
+
+// Change the cursor to a pointer when the mouse is over the places layer.
+map.on('mouseenter', 'data-layer', () => {
+    map.getCanvas().style.cursor = 'pointer';
+});
+
+// Change it back to a pointer when it leaves.
+map.on('mouseleave', 'data-layer', () => {
+    map.getCanvas().style.cursor = '';
+});
+</script>
 {% endblock content %}

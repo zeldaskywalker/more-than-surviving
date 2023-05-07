@@ -40,7 +40,7 @@ class TimelineView(generic.TemplateView):
 
 class GalleryView(generic.ListView):
     template_name = 'gallery.html'
-    events = Events.objects.all()
+    events = Events.objects.filter(map=True)
     activists = Activists.objects.all()
     images = Images.objects.all()
     images_dict = json_translation.create_images_dict(images)
@@ -81,10 +81,21 @@ class EventView(generic.DetailView):
 
         event_date_string = json_translation.event_date_string(final_start_date, final_end_date)
 
+        images = Images.objects.all()
+        images_dict = json_translation.create_images_dict(images)
+        related_activists = Activists.objects.filter(activist_id__in=self.object.activist_ids)
+
+        activist_cards = json_translation.related_activists_dict(related_activists, images_dict)
+
+        related_events = Events.objects.filter(event_id__in=self.object.related_event_ids)
+        events_geojson = json_translation.events_to_map_geojson(related_events, images_dict)
+
         context['location_names'] = location_string
         context['image_url'] = Images.objects.get(image_id=self.object.image_ids[0]).url
         context['event_date_string'] = event_date_string
         context['image_alt_text'] = Images.objects.get(image_id=self.object.image_ids[0]).alt_text
+        context['related_activists'] = activist_cards
+        context['map_geojson'] = events_geojson
         return context
 
 class ActivistView(generic.DetailView):
@@ -92,6 +103,7 @@ class ActivistView(generic.DetailView):
     template_name = 'activist.html'
 
     def get_context_data(self, **kwargs):
+        context = super(ActivistView, self).get_context_data(**kwargs)
         date_of_birth = self.object.date_of_birth
         date_of_birth_accuracy = self.object.date_of_birth_accuracy
         final_date_of_birth = json_translation.date_parser(date_of_birth, date_of_birth_accuracy)
@@ -103,11 +115,17 @@ class ActivistView(generic.DetailView):
         tribal_affiliations = self.object.tribal_affiliations
         tribal_affiliations_string = ' and '.join(tribal_affiliations)
 
-        context = super(ActivistView, self).get_context_data(**kwargs)
+        images = Images.objects.all()
+        images_dict = json_translation.create_images_dict(images)
+        related_events = Events.objects.filter(event_id__in=self.object.event_ids)
+
+        event_cards = json_translation.related_events_dict(related_events, images_dict)
+
         context['image_url'] = Images.objects.get(image_id=self.object.image_ids[0]).url
         context['image_alt_text'] = Images.objects.get(image_id=self.object.image_ids[0]).alt_text
         context['dob'] = final_date_of_birth
         context['dod'] = final_date_of_death
         context['tribal_affiliations'] = tribal_affiliations_string
+        context['related_events'] = event_cards
 
         return context
