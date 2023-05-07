@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <div id="event-page-container">
     <div>
         <h2>EVENT</h2>
@@ -14,7 +15,8 @@
     <hr id="about-hr">
     <div>
         <div>
-            <img style="float: left; margin-right: 25px; max-width: 100%" src="{{image_url}}" alt="{{image_alt_text}}">
+            <img style="float: left; margin-right: 25px; max-height: 500px; max-width: 100%" src="{{image_url}}" alt="{{image_alt_text}}">
+          
         </div>
         <div style="text-align: justify;">
             {{ events.long_description|linebreaks }}
@@ -34,10 +36,26 @@
     </div>
     <br>
     <br>
+<!-- An experiment! -->
+<!-- 
+    <hr id="about-hr">
+    <div>
+        <h2>CONTEXT</h2>
+    </br>
+<ul class="context-tl">
+    <li><b>1830</b> One event</li>
+    <li><b>1834</b> Another event</li>
+    <li><span class="womens-rights"><b>1835</b> The event we're on right now</span></li>
+    <li><b>1837</b> Another event that happened after</li>
+    <li><b>1840</b> One more event!</li>
+</ul>
+-->
     <hr id="about-hr">
     <div>
         <h2>RELATED ACTIVISTS</h2>
         related activists here
+
+    
     </div>
 </div>
 {% endblock content %}
