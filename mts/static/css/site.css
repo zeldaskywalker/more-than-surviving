@@ -3,7 +3,7 @@
     --main-bg-color: #FFFFF6;
     --document-purple: #60589C;
     --document-gray: #5C5B5B;
-    --text: #1A1A1A;
+    --text: #5C5B5B;
     --womens-rights-purple: #867EC9;
     --temperance-blue: #819CB9;
     --racial-equality-green: #589C82;
@@ -13,16 +13,22 @@
 
 hr {
     border-top: 1px solid var(--document-gray);
+    opacity: 1;
 }
 
 #about-hr {
     border-top: 2px solid var(--anti-slavery-gold);
+    opacity: 1;
 }
 
 .glossary-hr {
     border-top: 2px solid var(--anti-slavery-gold);
 }
 
+.glossary-acc-hr {
+    border-top: 2px solid var(--anti-slavery-gold);
+    opacity: .33;
+}
 html,
 body {
     background-color: var(--main-bg-color);
@@ -41,6 +47,11 @@ body {
 	float: none !important; 
 }
 
+i {
+    font-weight: 300 !important;
+    font-style: italic;
+    
+}
 title {
     opacity: 1;
     color: var(--document-purple);
