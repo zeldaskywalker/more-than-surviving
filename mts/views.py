@@ -83,18 +83,23 @@ class EventView(generic.DetailView):
 
         images = Images.objects.all()
         images_dict = json_translation.create_images_dict(images)
-        related_activists = Activists.objects.filter(activist_id__in=self.object.activist_ids)
 
+        # Code for grabbing DB information for related activist cards
+        related_activists = Activists.objects.filter(activist_id__in=self.object.activist_ids)
         activist_cards = json_translation.related_activists_dict(related_activists, images_dict)
 
+        # Code for grabbing DB information for related event cards
         related_events = Events.objects.filter(event_id__in=self.object.related_event_ids)
-        events_geojson = json_translation.events_to_map_geojson(related_events, images_dict)
+        event_cards = json_translation.related_events_dict(related_events, images_dict)
+
+        event = Events.objects.filter(event_id=self.object.event_id)
+        events_geojson = json_translation.events_to_map_geojson(event, images_dict)
 
         context['location_names'] = location_string
         context['image_url'] = Images.objects.get(image_id=self.object.image_ids[0]).url
         context['event_date_string'] = event_date_string
         context['image_alt_text'] = Images.objects.get(image_id=self.object.image_ids[0]).alt_text
-        context['related_activists'] = activist_cards
+        context['related_events_and_activists'] = event_cards + activist_cards
         context['map_geojson'] = events_geojson
         return context
 

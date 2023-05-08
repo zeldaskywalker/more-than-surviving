@@ -48,18 +48,18 @@
     <br>
     <hr id="about-hr">
     <div>
-        <h2>RELATED ACTIVISTS</h2>
+        <h2>RELATED EVENTS AND ACTIVISTS</h2>
         <br>
         <div class="row justify-content-around">
-            {% for activist in related_activists %}
+            {% for event_or_activist in related_events_and_activists %}
                 <div class="col-md-3" style="width: 29%"><!-- HERE -->
                     <div class="card mb-4 shadow-sm"><!-- HERE -->
-                        <img class="card-img-top" src="{{activist.image_url}}" alt="{{activist.image_alt_text}}">
+                        <img class="card-img-top" src="{{event_or_activist.image_url}}" alt="{{event_or_activist.image_alt_text}}">
                         <div class="card-body" style="background-color: #FFFFF6; border-radius: 10px; padding-top: 8px;">
-                            <div>{% autoescape off %}{{activist.issue_types}}{% endautoescape %}</div>
-                            <div><h3 style="font-size:16px; letter-spacing: 0.18px; font-weight: 700; padding-top: 10px; margin-bottom: 4px">{{activist.title}}</h3></div>
-                            <div><h4 style="font-size:12px; letter-spacing: 0.13px; font-weight: 500;">{{activist.dates}} | {{activist.location}}</h4></div>
-                            <a href="{{activist.button_path}}"><button>LEARN MORE</button></a>
+                            <div>{% autoescape off %}{{event_or_activist.issue_types}}{% endautoescape %}</div>
+                            <div><h3 style="font-size:16px; letter-spacing: 0.18px; font-weight: 700; padding-top: 10px; margin-bottom: 4px">{{event_or_activist.title}}</h3></div>
+                            <div><h4 style="font-size:12px; letter-spacing: 0.13px; font-weight: 500;">{{event_or_activist.dates}} | {{event_or_activist.location}}</h4></div>
+                            <a href="{{event_or_activist.button_path}}"><button>LEARN MORE</button></a>
                         </div>
                     </div>
                 </div>
