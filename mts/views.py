@@ -95,10 +95,14 @@ class EventView(generic.DetailView):
         event = Events.objects.filter(event_id=self.object.event_id)
         events_geojson = json_translation.events_to_map_geojson(event, images_dict)
 
+        first_image_id = self.object.image_ids[0]
+        final_first_image_id = first_image_id.removesuffix('.jpg').removesuffix('.png').removesuffix('webp').removesuffix('.jpeg')
+
         context['location_names'] = location_string
-        context['image_url'] = Images.objects.get(image_id=self.object.image_ids[0]).url
+        context['image_url'] = Images.objects.get(image_id=first_image_id).url
+        context['image_id'] = final_first_image_id
         context['event_date_string'] = event_date_string
-        context['image_alt_text'] = Images.objects.get(image_id=self.object.image_ids[0]).alt_text
+        context['image_alt_text'] = Images.objects.get(image_id=first_image_id).alt_text
         context['related_events_and_activists'] = event_cards + activist_cards
         context['map_geojson'] = events_geojson
         return context
@@ -126,7 +130,11 @@ class ActivistView(generic.DetailView):
 
         event_cards = json_translation.related_events_dict(related_events, images_dict)
 
+        first_image_id = self.object.image_ids[0]
+        final_first_image_id = first_image_id.removesuffix('.jpg').removesuffix('.png').removesuffix('webp').removesuffix('.jpeg')
+
         context['image_url'] = Images.objects.get(image_id=self.object.image_ids[0]).url
+        context['image_id'] = final_first_image_id
         context['image_alt_text'] = Images.objects.get(image_id=self.object.image_ids[0]).alt_text
         context['dob'] = final_date_of_birth
         context['dod'] = final_date_of_death

@@ -1,4 +1,3 @@
-
 :root {
     --main-bg-color: #FFFFF6;
     --document-purple: #60589C;
@@ -29,6 +28,7 @@ hr {
     border-top: 2px solid var(--anti-slavery-gold);
     opacity: .33;
 }
+
 html,
 body {
     background-color: var(--main-bg-color);
@@ -49,9 +49,9 @@ body {
 
 i {
     font-weight: 300 !important;
-    font-style: italic;
-    
+    font-style: italic; 
 }
+
 title {
     opacity: 1;
     color: var(--document-purple);
@@ -71,10 +71,7 @@ h1 {
     text-align: left;
 }
 
-
-
 #landing-main-div {
-    /* TEMPORARY */
     /*UPDATE IMAGE URL*/
     background-image: url("https://i.imgur.com/n5XkHyH.jpg");
     background-position: center;
@@ -102,7 +99,6 @@ h1 {
     letter-spacing: 0.4px;
     line-height: 43px;
     padding: 1em;
-    
 }
 
 h2 {
@@ -112,7 +108,6 @@ h2 {
     font-weight: 700;
     letter-spacing: 0.28px;
     text-align: left;
-
 }
 
 h3 {
@@ -122,13 +117,7 @@ h3 {
     font-weight: 700;
     letter-spacing: 0.2px;
     text-align: left;
-
     margin-top: 1px;
-
-
-
-
-
 }
 
 h4 {
@@ -183,10 +172,9 @@ b {
 }
 
 .home-image-caption {
-
-font-size: 12px;
-color: var(--document-gray);
-letter-spacing: 0.13px;
+    font-size: 12px;
+    color: var(--document-gray);
+    letter-spacing: 0.13px;
 }
 
 #about-caption {
@@ -211,7 +199,8 @@ button {
     font-weight: 700;
     letter-spacing: 0.16px;
     text-align: left;
-    padding: 4px 8px; }
+    padding: 4px 8px;
+}
 
 #landing-page-button {
     background-color: var(--womens-rights-purple);
@@ -223,6 +212,7 @@ button {
 .spot-button-container {
     padding-top: 15px;
 }
+
 #landing-bottom-container {
     width: auto;
     align-items: center;
@@ -274,8 +264,6 @@ button {
     padding: 50px;
 }
 
-
-
 #landing-about-text {
     color: var(--document-gray);
 }
@@ -288,7 +276,6 @@ button {
 .landing-child-div {
     padding-left: 25px;
     padding-right: 25px;
- 
 }
 
 #landing-issues-container {
@@ -344,8 +331,6 @@ button {
     padding-left: 30px;
     padding-right: 200px;
     align-items: middle;
-    
-
 }
 
 .works-cited {
@@ -366,27 +351,25 @@ button {
     letter-spacing: 0.17px;
     text-align: left ;
     align-items: middle;
-    /* padding: 40px; */
 }
 
 #nav-links-container {
     display: grid;
     text-align: center ;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-min-width: 375px;
+    min-width: 375px;
     vertical-align: middle;
     align-items: center;
-   
 }
 
 .nav-links {
     border-right: 1px solid var(--anti-slavery-gold);
     padding-right: 1px;
     text-align: center;
-   vertical-align: middle;
-   min-width: 90px;
-
+    vertical-align: middle;
+    min-width: 90px;
 }
+
 .no-border {
     border-right:0px;
 }
@@ -432,9 +415,6 @@ min-width: 375px;
     letter-spacing: 0.16px;
 }
 
-
-
-
 a {
     color: inherit;
 }
@@ -479,7 +459,6 @@ li a:hover {
     max-width: 300px;
 }
 
-
 .about-bio-text {
     flex: 3;
 }
@@ -493,8 +472,6 @@ li a:hover {
     display: flex;
     margin-bottom: 20px;
 }
-
-
 
 #issues-header-container {
     padding: 50px 50px 50px 50px;
@@ -555,7 +532,6 @@ li a:hover {
 
 .womens-rights {
     color: var(--womens-rights-purple);
-
 }
 
 .light-text {
@@ -658,9 +634,9 @@ ul.context-tl {
     justify-content: space-between;
     align-items: top;
     position: relative;
-  }
+}
   
-  ul.context-tl::before {
+ul.context-tl::before {
     content: '';
     display: block;
     position: absolute;
@@ -670,18 +646,18 @@ ul.context-tl {
     height: 2px;
     background-color: var(--document-gray);
     z-index: -1;
-  }
+}
   
-  ul.context-tl li {
+ul.context-tl li {
     flex-basis: 20%;
     text-align: center;
     position: relative;
     padding-bottom: 8%;
     white-space: pre-line;
     line-height: 18px;
-  }
+}
   
-  ul.context-tl li::before {
+ul.context-tl li::before {
     content: '';
     display: block;
     position: absolute;
@@ -693,9 +669,52 @@ ul.context-tl {
     border-radius: 50%;
     background-color: var(--document-gray);
     z-index: 1;
-  }
+}
   
-  ul.context-tl li.active::before {
+ul.context-tl li.active::before {
     background-color: var(--document-gray);
-  }
-</style>
+}
+
+#EVT1_image2 {
+    width: 30%;
+}
+
+#EVT2_AntiDisc_image_1 {
+    width: 14%;
+}
+
+#EVT4_BostonOdeon1838_image1 {
+    width: 75%;
+}
+
+#EVT7_Burton_image_1 {
+    width: 7.5%;
+}
+
+#ACT1ABoston_image_1 {
+    width: 38%;
+}
+
+#ACT2WApes_image_1 {
+    width: 48%;
+}
+
+#ACT3SAttaquin_image_1 {
+    width: 25%;
+}
+
+#ACT4MJohnson_image_1 {
+    width: 30%;
+}
+
+#MTSPlaceholder_image_1 {
+    width: 26%;
+}
+
+#ACT6CAttaquin_image_1 {
+    width: 26%;
+}
+
+#ACT7_JAmos_image2 {
+    width: 37%;
+}
