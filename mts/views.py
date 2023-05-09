@@ -103,6 +103,7 @@ class EventView(generic.DetailView):
         context['image_id'] = final_first_image_id
         context['event_date_string'] = event_date_string
         context['image_alt_text'] = Images.objects.get(image_id=first_image_id).alt_text
+        context['credit'] = Images.objects.get(image_id=first_image_id).credit
         context['related_events_and_activists'] = event_cards + activist_cards
         context['map_geojson'] = events_geojson
         return context
