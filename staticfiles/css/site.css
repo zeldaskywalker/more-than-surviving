@@ -1,0 +1,701 @@
+
+:root {
+    --main-bg-color: #FFFFF6;
+    --document-purple: #60589C;
+    --document-gray: #5C5B5B;
+    --text: #5C5B5B;
+    --womens-rights-purple: #867EC9;
+    --temperance-blue: #819CB9;
+    --racial-equality-green: #589C82;
+    --anti-slavery-gold: #D7942A;
+    --indigenous-rights-red: #BB604D;
+}
+
+hr {
+    border-top: 1px solid var(--document-gray);
+    opacity: 1;
+}
+
+#about-hr {
+    border-top: 2px solid var(--anti-slavery-gold);
+    opacity: 1;
+}
+
+.glossary-hr {
+    border-top: 2px solid var(--anti-slavery-gold);
+}
+
+.glossary-acc-hr {
+    border-top: 2px solid var(--anti-slavery-gold);
+    opacity: .33;
+}
+html,
+body {
+    background-color: var(--main-bg-color);
+    margin: 0;
+    height: 100%;
+    opacity: 1;
+    color: var(--document-gray);
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0.18px;
+    text-align: left;
+    max-width: 1160px; 
+	margin: 0 auto !important; 
+	float: none !important; 
+}
+
+i {
+    font-weight: 300 !important;
+    font-style: italic;
+    
+}
+title {
+    opacity: 1;
+    color: var(--document-purple);
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 0.44px;
+    text-align: left;
+}
+
+h1 {
+    opacity: 1;
+    color: var(--document-purple);
+    font-size: 33px;
+    font-weight: 700;
+    letter-spacing: 0.37px;
+    text-align: left;
+}
+
+
+
+#landing-main-div {
+    /* TEMPORARY */
+    /*UPDATE IMAGE URL*/
+    background-image: url("https://i.imgur.com/n5XkHyH.jpg");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+}
+
+#landing-h1-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#landing-h1 {
+    text-shadow: 5px 2px 8px rgba(0, 0, 0, 0.5);
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    text-align: center;
+    color: var(--main-bg-color);
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    line-height: 43px;
+    padding: 1em;
+    
+}
+
+h2 {
+    opacity: 1;
+    color: var(--womens-rights-purple);
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0.28px;
+    text-align: left;
+
+}
+
+h3 {
+    opacity: 1;
+    color: var(--document-gray);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-align: left;
+
+    margin-top: 1px;
+
+
+
+
+
+}
+
+h4 {
+    opacity: 1;
+    color: var(--document-gray);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.13px;
+    text-align: left;
+    margin-top: -1px;
+}
+
+b {
+    font-weight: 700;
+}
+
+.q {
+    opacity: 1;
+    color: var(--anti-slavery-gold);
+    font-size: 34px;
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 0.38px;
+    text-align: left;
+}
+
+.s1 {
+    opacity: 1;
+    color: var(--womens-rights-purple);
+    font-size: 27px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-align: left;
+}
+
+.s2 {
+    opacity: 1;
+    color: var(--anti-slavery-gold);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.22px;
+    text-align: left;
+}
+
+.caption {
+    opacity: 1;
+    color: var(--document-gray);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14px;
+    text-align: left;
+}
+
+.home-image-caption {
+
+font-size: 12px;
+color: var(--document-gray);
+letter-spacing: 0.13px;
+}
+
+#about-caption {
+    color: var(--document-purple);
+    font-size: 21px;
+    letter-spacing: 0.23px;
+    text-align: left;
+}
+
+#about-divider {
+    color: var(--anti-slavery-gold);
+    font-size: 21px;
+}
+
+button {
+    border-radius: 5px;
+    border: 0px solid #979797;
+    opacity: 1;
+    background-color: var(--document-gray);
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.16px;
+    text-align: left;
+    padding: 4px 8px; }
+
+#landing-page-button {
+    background-color: var(--womens-rights-purple);
+    padding: 1em;
+    border-radius: 5px;
+    color: #FFFFFF;
+}
+
+.spot-button-container {
+    padding-top: 15px;
+}
+#landing-bottom-container {
+    width: auto;
+    align-items: center;
+}
+
+#landing-buttons-container {
+    height: 20%;
+    width: 50%;
+    color: var(--main-bg-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#landing-about-container {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 50px;
+}
+
+.page-container {
+    padding: 50px;
+}
+
+#about-page-container {
+    padding: 50px;
+}
+
+#activist-page-container {
+    padding: 50px;
+}
+
+#event-page-container {
+    padding: 50px;
+}
+
+
+#timeline-page-container {
+    padding: 50px;
+}
+
+#map-page-container {
+    padding: 50px;
+}
+
+#issues-page-container {
+    padding: 50px;
+}
+
+
+
+#landing-about-text {
+    color: var(--document-gray);
+}
+
+#landing-about-header {
+    font-weight: 600;
+    font-style: normal;
+}
+
+.landing-child-div {
+    padding-left: 25px;
+    padding-right: 25px;
+ 
+}
+
+#landing-issues-container {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 50px;
+    color: var(--main-bg-color);
+    background-color: var(--womens-rights-purple);
+}
+
+#landing-issues-text {
+    color: var(--main-bg-color);
+    font-weight: 600;
+    font-style: normal;
+}
+
+#landing-explore-container {
+    height: auto;
+    padding: 50px;
+}
+
+#landing-explore-text {
+    color: #1A1A1A;
+    font-weight: 700;
+}
+
+#landing-example-explore {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 30px;
+}
+
+.header-footer-container {
+    background-color: var(--document-purple);
+    top: 0;
+    color: var(--main-bg-color);
+    align-items: middle;
+}
+
+.header-container {
+    height: auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 100px;
+    opacity: 1;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.17px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 200px;
+    align-items: middle;
+    
+
+}
+
+.works-cited {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.citations {
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0.11px;
+}
+
+.nav {
+    opacity: 1;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.17px;
+    text-align: left ;
+    align-items: middle;
+    /* padding: 40px; */
+}
+
+#nav-links-container {
+    display: grid;
+    text-align: center ;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+min-width: 375px;
+    vertical-align: middle;
+    align-items: center;
+   
+}
+
+.nav-links {
+    border-right: 1px solid var(--anti-slavery-gold);
+    padding-right: 1px;
+    text-align: center;
+   vertical-align: middle;
+   min-width: 90px;
+
+}
+.no-border {
+    border-right:0px;
+}
+
+#logo_container {
+    vertical-align: middle;
+    padding-left: 20px;
+}
+
+.footer-container {
+    left: 0;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    opacity: 1;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    text-align: left;
+    line-height: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.footer-info {
+    opacity: 1;
+    margin: 30px;
+}
+
+.footer-info-description {
+    margin-top: 5px;
+    font-weight: 200;
+    font-size: 12px;
+}
+
+.footer-info-links {
+    border-left: 1px solid var(--anti-slavery-gold);
+    padding-left: 8px;
+    opacity: 1;
+    margin: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16px;
+}
+
+
+
+
+a {
+    color: inherit;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+/* Paragraph link styles */
+
+p>a {
+    text-decoration: underline !important;
+    text-decoration-color: var(--womens-rights-purple) !important;
+}
+
+li>a {
+    text-decoration: underline !important;
+    text-decoration-color: var(--womens-rights-purple) !important;
+}
+
+p a:hover {
+    color: var(--document-purple) !important;
+}
+
+li a:hover {
+    color: var(--document-purple) !important;
+}
+
+/* About page bio divs */
+
+.about-pic {
+    flex: 1;
+    padding-right: 10px;
+    max-width: 300px;
+}
+
+
+.about-bio-text {
+    flex: 3;
+}
+
+.about-pic img {
+    max-width: 100%;
+    height: auto;
+}
+
+.about-bio {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+
+
+#issues-header-container {
+    padding: 50px 50px 50px 50px;
+}
+
+/* Accordion Styles for Glossary Page*/
+
+.accordion {}
+
+.accordion input[type="checkbox"] {
+    display: none;
+}
+
+.accordion label {
+    display: block;
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    color: var(--document-purple);
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 40px;  
+    background-image: url('https://i.imgur.com/CizzedP.png');
+ 
+}
+
+.accordion .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion input[type="checkbox"]:checked ~ .content {
+    max-height: 1000px;
+    transition: max-height 0.4s ease-in;
+}
+
+
+.indigenous-rights {
+    color: var(--indigenous-rights-red);
+}
+
+.racial-equality {
+    color: var(--racial-equality-green);
+}
+
+.antislavery {
+    color: var(--anti-slavery-gold);
+}
+
+.temperance {
+    color: var(--temperance-blue);
+}
+
+.womens-rights {
+    color: var(--womens-rights-purple);
+
+}
+
+.light-text {
+    color: var(--main-bg-color);
+}
+
+.dark-text {
+    color: var(--document-gray);
+}
+
+/* MAP STYLING */
+
+#map-container {
+    width: 100%;
+    height: 550px;
+}
+
+#main-map {
+    width: inherit;
+    height: 100%;
+}
+
+#map-event-page-container {
+    width: 100%;
+    height: 550px;
+}
+
+#event-page-map {
+    width: 100%;
+    height: 100%;
+}
+
+#indigenous-rights-button {
+    border-radius: 7.5px;
+    opacity: 1;
+    background-color: var(--indigenous-rights-red);
+    border: none;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+#anti-slavery-button {
+    border-radius: 7.5px;
+    opacity: 1;
+    background-color: var(--anti-slavery-gold);
+    border: none;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+#womens-rights-button {
+    border-radius: 7.5px;
+    opacity: 1;
+    background-color: var(--womens-rights-purple);
+    border: none;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+#temperance-button {
+    border-radius: 7.5px;
+    opacity: 1;
+    background-color: var(--temperance-blue);
+    border: none;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+#racial-equality-button {
+    border-radius: 7.5px;
+    opacity: 1;
+    background-color: var(--racial-equality-green);
+    border: none;
+    color: #FFFFFF;
+    font-size: 10px;
+}
+
+#issue-key {
+    display: flex;
+}
+
+#map-popup {
+    font-family: 'Red Hat Display', sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+#map-img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Context TL */
+
+ul.context-tl {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    position: relative;
+  }
+  
+  ul.context-tl::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--document-gray);
+    z-index: -1;
+  }
+  
+  ul.context-tl li {
+    flex-basis: 20%;
+    text-align: center;
+    position: relative;
+    padding-bottom: 8%;
+    white-space: pre-line;
+    line-height: 18px;
+  }
+  
+  ul.context-tl li::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--document-gray);
+    z-index: 1;
+  }
+  
+  ul.context-tl li.active::before {
+    background-color: var(--document-gray);
+  }
+</style>
