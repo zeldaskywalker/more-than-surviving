@@ -133,12 +133,13 @@ class ActivistView(generic.DetailView):
         first_image_id = self.object.image_ids[0]
         final_first_image_id = first_image_id.removesuffix('.jpg').removesuffix('.png').removesuffix('webp').removesuffix('.jpeg')
 
-        context['image_url'] = Images.objects.get(image_id=self.object.image_ids[0]).url
+        context['image_url'] = Images.objects.get(image_id=first_image_id).url
         context['image_id'] = final_first_image_id
-        context['image_alt_text'] = Images.objects.get(image_id=self.object.image_ids[0]).alt_text
+        context['image_alt_text'] = Images.objects.get(image_id=first_image_id).alt_text
         context['dob'] = final_date_of_birth
         context['dod'] = final_date_of_death
         context['tribal_affiliations'] = tribal_affiliations_string
+        context['credit'] = Images.objects.get(image_id=first_image_id).credit
         context['related_events'] = event_cards
 
         return context
